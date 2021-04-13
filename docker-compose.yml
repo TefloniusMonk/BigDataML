@@ -1,0 +1,38 @@
+version: "2.1"
+
+services:
+
+  spark-master:
+    image: bde2020/spark-master:2.1.0-hadoop2.8-hive-java8
+    hostname: spark-master
+    container_name: spark-master
+    ports:
+      - "8100:8080"
+      - "7077:7077"
+
+  spark-worker:
+    image: bde2020/spark-worker:2.1.0-hadoop2.8-hive-java8
+    hostname: spark-worker
+    container_name: spark-worker-1
+    ports:
+      - "8110:8080"
+    environment:
+      - "SPARK_MASTER=spark://spark-master:7077"
+    depends_on:
+      spark-master:
+        condition: service_healthy
+    healthcheck:
+      interval: 5s
+      retries: 100
+
+  zeppelin:
+    image: apache/zeppelin:0.9.0
+    container_name: zeppelin
+    hostname: zeppelin
+    ports:
+      - "8090:8080"
+    environment:
+      SPARK_MASTER: "spark://spark-master:7077"
+
+
+
