@@ -7,7 +7,7 @@ import scala.util.Random
 
 class DataFrame(var columns: DenseVector[String],
                 var values: DenseMatrix[Double],
-                val columnMap: Map[String, Int] = null
+                var columnMap: Map[String, Int] = null
                ) {
   def drop(column: String, inplace: Boolean = false): DenseMatrix[Double] = {
     val toDropCol = columnMap.getOrElse(column, -1)
@@ -18,11 +18,13 @@ class DataFrame(var columns: DenseVector[String],
     if (inplace) {
       values = filtered
     }
+    columnMap = columnMap.removed(column)
+    columns = DenseVector(columns.data.filter(_ != column))
     filtered
   }
 
   def randomSplit(testSize: Double = 0.25): (DataFrame, DataFrame) = {
-    val trainRows = Random.shuffle(List.range(0, values.rows)).take((values.rows * (1- testSize)).toInt)
+    val trainRows = Random.shuffle(List.range(0, values.rows)).take((values.rows * (1 - testSize)).toInt)
     val testRows = Range(0, values.rows) diff trainRows
     val trainDF = new DataFrame(columns, values.delete(testRows, Axis._0))
     val testDf = new DataFrame(columns, values.delete(trainRows, Axis._0))

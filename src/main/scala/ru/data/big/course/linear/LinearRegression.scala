@@ -2,6 +2,9 @@ package ru.data.big.course.linear
 
 import breeze.linalg._
 import breeze.math.PowImplicits.DoublePow
+import breeze.numerics.abs
+
+import scala.collection.mutable.ListBuffer
 
 trait Regularization
 
@@ -16,7 +19,7 @@ case class ELASTIC_NET() extends Regularization
 class LinearRegression(val X: DenseMatrix[Double] = null,
                        val y: DenseVector[Double] = null,
                        val learningRate: Double = 10 pow (-5),
-                       val precision: Double = 10 pow (-5),
+                       val precision: Double = 10 pow (-2),
                        val regularisation: Regularization = NONE(),
                        val maxIterations: Int = 1000,
                        var weights: DenseVector[Double] = null,
@@ -24,6 +27,7 @@ class LinearRegression(val X: DenseMatrix[Double] = null,
                        var l1Penalty: Double = 0.01,
                        var l2Penalty: Double = 0.01,
                        var elasticNetRatio: Double = 0.5,
+                       var learnHist : ListBuffer[Double] = new ListBuffer[Double](),
                        private var isInit: Boolean = false,
                        private var lastStepSize: Double = Double.MaxValue,
                       ) extends Estimator[Double] {
@@ -61,7 +65,6 @@ class LinearRegression(val X: DenseMatrix[Double] = null,
 
   private def fitLasso(): Unit = {
     val dW = DenseVector.zeros[Double](X.cols)
-    var col = 0
     for (col <- 0 until X.cols) {
       val error = y - predict(X)
       if (weights(col) > 0) {
@@ -92,6 +95,10 @@ class LinearRegression(val X: DenseMatrix[Double] = null,
   }
 
   private def step(dW: DenseVector[Double], db: Double) = {
+    learnHist += Metric.mae(y, predict(X))
+    if (learnHist.size > 1){
+      lastStepSize = abs(learnHist.takeRight(2).reduce(_-_))
+    }
     weights = weights - learningRate * dW
     bias = bias - learningRate * db
   }
@@ -122,6 +129,10 @@ class LinearRegression(val X: DenseMatrix[Double] = null,
         }
       case _ =>
     }
+  }
+
+  override def learnHistory(): ListBuffer[Double] = {
+    learnHist
   }
 }
 
