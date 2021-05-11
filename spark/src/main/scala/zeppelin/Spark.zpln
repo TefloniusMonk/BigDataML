@@ -856,9 +856,151 @@
    "status": "FINISHED"
   },
   {
-   "text": "%md\n\n#### В датасете слишком много колонок, надо отфильтровать",
+   "text": "%spark\n\ndf.printSchema()\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:32:03+0300",
+   "dateUpdated": "2021-05-11T19:00:04+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "root\n |-- instanceId_userId: integer (nullable = true)\n |-- instanceId_objectType: string (nullable = true)\n |-- instanceId_objectId: integer (nullable = true)\n |-- audit_pos: long (nullable = true)\n |-- audit_clientType: string (nullable = true)\n |-- audit_timestamp: long (nullable = true)\n |-- audit_timePassed: long (nullable = true)\n |-- audit_experiment: string (nullable = true)\n |-- audit_resourceType: long (nullable = true)\n |-- metadata_ownerId: integer (nullable = true)\n |-- metadata_ownerType: string (nullable = true)\n |-- metadata_createdAt: long (nullable = true)\n |-- metadata_authorId: integer (nullable = true)\n |-- metadata_applicationId: long (nullable = true)\n |-- metadata_numCompanions: integer (nullable = true)\n |-- metadata_numPhotos: integer (nullable = true)\n |-- metadata_numPolls: integer (nullable = true)\n |-- metadata_numSymbols: integer (nullable = true)\n |-- metadata_numTokens: integer (nullable = true)\n |-- metadata_numVideos: integer (nullable = true)\n |-- metadata_platform: string (nullable = true)\n |-- metadata_totalVideoLength: integer (nullable = true)\n |-- metadata_options: array (nullable = true)\n |    |-- element: string (containsNull = true)\n |-- relationsMask: long (nullable = true)\n |-- userOwnerCounters_USER_FEED_REMOVE: double (nullable = true)\n |-- userOwnerCounters_USER_PROFILE_VIEW: double (nullable = true)\n |-- userOwnerCounters_VOTE_POLL: double (nullable = true)\n |-- userOwnerCounters_USER_SEND_MESSAGE: double (nullable = true)\n |-- userOwnerCounters_USER_DELETE_MESSAGE: double (nullable = true)\n |-- userOwnerCounters_USER_INTERNAL_LIKE: double (nullable = true)\n |-- userOwnerCounters_USER_INTERNAL_UNLIKE: double (nullable = true)\n |-- userOwnerCounters_USER_STATUS_COMMENT_CREATE: double (nullable = true)\n |-- userOwnerCounters_PHOTO_COMMENT_CREATE: double (nullable = true)\n |-- userOwnerCounters_MOVIE_COMMENT_CREATE: double (nullable = true)\n |-- userOwnerCounters_USER_PHOTO_ALBUM_COMMENT_CREATE: double (nullable = true)\n |-- userOwnerCounters_COMMENT_INTERNAL_LIKE: double (nullable = true)\n |-- userOwnerCounters_USER_FORUM_MESSAGE_CREATE: double (nullable = true)\n |-- userOwnerCounters_PHOTO_MARK_CREATE: double (nullable = true)\n |-- userOwnerCounters_PHOTO_VIEW: double (nullable = true)\n |-- userOwnerCounters_PHOTO_PIN_BATCH_CREATE: double (nullable = true)\n |-- userOwnerCounters_PHOTO_PIN_UPDATE: double (nullable = true)\n |-- userOwnerCounters_USER_PRESENT_SEND: double (nullable = true)\n |-- userOwnerCounters_UNKNOWN: double (nullable = true)\n |-- userOwnerCounters_CREATE_TOPIC: double (nullable = true)\n |-- userOwnerCounters_CREATE_IMAGE: double (nullable = true)\n |-- userOwnerCounters_CREATE_MOVIE: double (nullable = true)\n |-- userOwnerCounters_CREATE_COMMENT: double (nullable = true)\n |-- userOwnerCounters_CREATE_LIKE: double (nullable = true)\n |-- userOwnerCounters_TEXT: double (nullable = true)\n |-- userOwnerCounters_IMAGE: double (nullable = true)\n |-- userOwnerCounters_VIDEO: double (nullable = true)\n |-- ownerUserCounters_USER_FEED_REMOVE: double (nullable = true)\n |-- ownerUserCounters_USER_PROFILE_VIEW: double (nullable = true)\n |-- ownerUserCounters_VOTE_POLL: double (nullable = true)\n |-- ownerUserCounters_USER_SEND_MESSAGE: double (nullable = true)\n |-- ownerUserCounters_USER_DELETE_MESSAGE: double (nullable = true)\n |-- ownerUserCounters_USER_INTERNAL_LIKE: double (nullable = true)\n |-- ownerUserCounters_USER_INTERNAL_UNLIKE: double (nullable = true)\n |-- ownerUserCounters_USER_STATUS_COMMENT_CREATE: double (nullable = true)\n |-- ownerUserCounters_PHOTO_COMMENT_CREATE: double (nullable = true)\n |-- ownerUserCounters_MOVIE_COMMENT_CREATE: double (nullable = true)\n |-- ownerUserCounters_USER_PHOTO_ALBUM_COMMENT_CREATE: double (nullable = true)\n |-- ownerUserCounters_COMMENT_INTERNAL_LIKE: double (nullable = true)\n |-- ownerUserCounters_USER_FORUM_MESSAGE_CREATE: double (nullable = true)\n |-- ownerUserCounters_PHOTO_MARK_CREATE: double (nullable = true)\n |-- ownerUserCounters_PHOTO_VIEW: double (nullable = true)\n |-- ownerUserCounters_PHOTO_PIN_BATCH_CREATE: double (nullable = true)\n |-- ownerUserCounters_PHOTO_PIN_UPDATE: double (nullable = true)\n |-- ownerUserCounters_USER_PRESENT_SEND: double (nullable = true)\n |-- ownerUserCounters_UNKNOWN: double (nullable = true)\n |-- ownerUserCounters_CREATE_TOPIC: double (nullable = true)\n |-- ownerUserCounters_CREATE_IMAGE: double (nullable = true)\n |-- ownerUserCounters_CREATE_MOVIE: double (nullable = true)\n |-- ownerUserCounters_CREATE_COMMENT: double (nullable = true)\n |-- ownerUserCounters_CREATE_LIKE: double (nullable = true)\n |-- ownerUserCounters_TEXT: double (nullable = true)\n |-- ownerUserCounters_IMAGE: double (nullable = true)\n |-- ownerUserCounters_VIDEO: double (nullable = true)\n |-- membership_status: string (nullable = true)\n |-- membership_statusUpdateDate: long (nullable = true)\n |-- membership_joinDate: long (nullable = true)\n |-- membership_joinRequestDate: long (nullable = true)\n |-- owner_create_date: long (nullable = true)\n |-- owner_birth_date: integer (nullable = true)\n |-- owner_gender: integer (nullable = true)\n |-- owner_status: integer (nullable = true)\n |-- owner_ID_country: long (nullable = true)\n |-- owner_ID_Location: integer (nullable = true)\n |-- owner_is_active: integer (nullable = true)\n |-- owner_is_deleted: integer (nullable = true)\n |-- owner_is_abused: integer (nullable = true)\n |-- owner_is_activated: integer (nullable = true)\n |-- owner_change_datime: long (nullable = true)\n |-- owner_is_semiactivated: integer (nullable = true)\n |-- owner_region: integer (nullable = true)\n |-- user_create_date: long (nullable = true)\n |-- user_birth_date: integer (nullable = true)\n |-- user_gender: integer (nullable = true)\n |-- user_status: integer (nullable = true)\n |-- user_ID_country: long (nullable = true)\n |-- user_ID_Location: integer (nullable = true)\n |-- user_is_active: integer (nullable = true)\n |-- user_is_deleted: integer (nullable = true)\n |-- user_is_abused: integer (nullable = true)\n |-- user_is_activated: integer (nullable = true)\n |-- user_change_datime: long (nullable = true)\n |-- user_is_semiactivated: integer (nullable = true)\n |-- user_region: integer (nullable = true)\n |-- feedback: array (nullable = true)\n |    |-- element: string (containsNull = true)\n |-- objectId: integer (nullable = true)\n |-- auditweights_ageMs: double (nullable = true)\n |-- auditweights_closed: double (nullable = true)\n |-- auditweights_ctr_gender: double (nullable = true)\n |-- auditweights_ctr_high: double (nullable = true)\n |-- auditweights_ctr_negative: double (nullable = true)\n |-- auditweights_dailyRecency: double (nullable = true)\n |-- auditweights_feedOwner_RECOMMENDED_GROUP: double (nullable = true)\n |-- auditweights_feedStats: double (nullable = true)\n |-- auditweights_friendCommentFeeds: double (nullable = true)\n |-- auditweights_friendCommenters: double (nullable = true)\n |-- auditweights_friendLikes: double (nullable = true)\n |-- auditweights_friendLikes_actors: double (nullable = true)\n |-- auditweights_hasDetectedText: double (nullable = true)\n |-- auditweights_hasText: double (nullable = true)\n |-- auditweights_isPymk: double (nullable = true)\n |-- auditweights_isRandom: double (nullable = true)\n |-- auditweights_likersFeedStats_hyper: double (nullable = true)\n |-- auditweights_likersSvd_prelaunch_hyper: double (nullable = true)\n |-- auditweights_matrix: double (nullable = true)\n |-- auditweights_notOriginalPhoto: double (nullable = true)\n |-- auditweights_numDislikes: double (nullable = true)\n |-- auditweights_numLikes: double (nullable = true)\n |-- auditweights_numShows: double (nullable = true)\n |-- auditweights_onlineVideo: double (nullable = true)\n |-- auditweights_partAge: double (nullable = true)\n |-- auditweights_partCtr: double (nullable = true)\n |-- auditweights_partSvd: double (nullable = true)\n |-- auditweights_processedVideo: double (nullable = true)\n |-- auditweights_relationMasks: double (nullable = true)\n |-- auditweights_source_LIVE_TOP: double (nullable = true)\n |-- auditweights_source_MOVIE_TOP: double (nullable = true)\n |-- auditweights_svd_prelaunch: double (nullable = true)\n |-- auditweights_svd_spark: double (nullable = true)\n |-- auditweights_userAge: double (nullable = true)\n |-- auditweights_userOwner_CREATE_COMMENT: double (nullable = true)\n |-- auditweights_userOwner_CREATE_IMAGE: double (nullable = true)\n |-- auditweights_userOwner_CREATE_LIKE: double (nullable = true)\n |-- auditweights_userOwner_IMAGE: double (nullable = true)\n |-- auditweights_userOwner_MOVIE_COMMENT_CREATE: double (nullable = true)\n |-- auditweights_userOwner_PHOTO_COMMENT_CREATE: double (nullable = true)\n |-- auditweights_userOwner_PHOTO_MARK_CREATE: double (nullable = true)\n |-- auditweights_userOwner_PHOTO_VIEW: double (nullable = true)\n |-- auditweights_userOwner_TEXT: double (nullable = true)\n |-- auditweights_userOwner_UNKNOWN: double (nullable = true)\n |-- auditweights_userOwner_USER_DELETE_MESSAGE: double (nullable = true)\n |-- auditweights_userOwner_USER_FEED_REMOVE: double (nullable = true)\n |-- auditweights_userOwner_USER_FORUM_MESSAGE_CREATE: double (nullable = true)\n |-- auditweights_userOwner_USER_INTERNAL_LIKE: double (nullable = true)\n |-- auditweights_userOwner_USER_INTERNAL_UNLIKE: double (nullable = true)\n |-- auditweights_userOwner_USER_PRESENT_SEND: double (nullable = true)\n |-- auditweights_userOwner_USER_PROFILE_VIEW: double (nullable = true)\n |-- auditweights_userOwner_USER_SEND_MESSAGE: double (nullable = true)\n |-- auditweights_userOwner_USER_STATUS_COMMENT_CREATE: double (nullable = true)\n |-- auditweights_userOwner_VIDEO: double (nullable = true)\n |-- auditweights_userOwner_VOTE_POLL: double (nullable = true)\n |-- auditweights_x_ActorsRelations: long (nullable = true)\n |-- auditweights_likersSvd_spark_hyper: double (nullable = true)\n |-- auditweights_source_PROMO: double (nullable = true)\n |-- date: date (nullable = true)\n |-- id: string (nullable = true)\n |-- liked: integer (nullable = false)\n\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620748804479_635517551",
+   "id": "paragraph_1620748804479_635517551",
+   "dateCreated": "2021-05-11T19:00:04+0300",
+   "dateStarted": "2021-05-11T19:00:04+0300",
+   "dateFinished": "2021-05-11T19:00:04+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\nvar notNaDf = df.na.fill(0).na.fill(\"\")\nnotNaDf.printSchema()",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T19:19:01+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "root\n |-- instanceId_userId: integer (nullable = false)\n |-- instanceId_objectType: string (nullable = false)\n |-- instanceId_objectId: integer (nullable = false)\n |-- audit_pos: long (nullable = false)\n |-- audit_clientType: string (nullable = false)\n |-- audit_timestamp: long (nullable = false)\n |-- audit_timePassed: long (nullable = false)\n |-- audit_experiment: string (nullable = false)\n |-- audit_resourceType: long (nullable = false)\n |-- metadata_ownerId: integer (nullable = false)\n |-- metadata_ownerType: string (nullable = false)\n |-- metadata_createdAt: long (nullable = false)\n |-- metadata_authorId: integer (nullable = false)\n |-- metadata_applicationId: long (nullable = false)\n |-- metadata_numCompanions: integer (nullable = false)\n |-- metadata_numPhotos: integer (nullable = false)\n |-- metadata_numPolls: integer (nullable = false)\n |-- metadata_numSymbols: integer (nullable = false)\n |-- metadata_numTokens: integer (nullable = false)\n |-- metadata_numVideos: integer (nullable = false)\n |-- metadata_platform: string (nullable = false)\n |-- metadata_totalVideoLength: integer (nullable = false)\n |-- metadata_options: array (nullable = true)\n |    |-- element: string (containsNull = true)\n |-- relationsMask: long (nullable = false)\n |-- userOwnerCounters_USER_FEED_REMOVE: double (nullable = false)\n |-- userOwnerCounters_USER_PROFILE_VIEW: double (nullable = false)\n |-- userOwnerCounters_VOTE_POLL: double (nullable = false)\n |-- userOwnerCounters_USER_SEND_MESSAGE: double (nullable = false)\n |-- userOwnerCounters_USER_DELETE_MESSAGE: double (nullable = false)\n |-- userOwnerCounters_USER_INTERNAL_LIKE: double (nullable = false)\n |-- userOwnerCounters_USER_INTERNAL_UNLIKE: double (nullable = false)\n |-- userOwnerCounters_USER_STATUS_COMMENT_CREATE: double (nullable = false)\n |-- userOwnerCounters_PHOTO_COMMENT_CREATE: double (nullable = false)\n |-- userOwnerCounters_MOVIE_COMMENT_CREATE: double (nullable = false)\n |-- userOwnerCounters_USER_PHOTO_ALBUM_COMMENT_CREATE: double (nullable = false)\n |-- userOwnerCounters_COMMENT_INTERNAL_LIKE: double (nullable = false)\n |-- userOwnerCounters_USER_FORUM_MESSAGE_CREATE: double (nullable = false)\n |-- userOwnerCounters_PHOTO_MARK_CREATE: double (nullable = false)\n |-- userOwnerCounters_PHOTO_VIEW: double (nullable = false)\n |-- userOwnerCounters_PHOTO_PIN_BATCH_CREATE: double (nullable = false)\n |-- userOwnerCounters_PHOTO_PIN_UPDATE: double (nullable = false)\n |-- userOwnerCounters_USER_PRESENT_SEND: double (nullable = false)\n |-- userOwnerCounters_UNKNOWN: double (nullable = false)\n |-- userOwnerCounters_CREATE_TOPIC: double (nullable = false)\n |-- userOwnerCounters_CREATE_IMAGE: double (nullable = false)\n |-- userOwnerCounters_CREATE_MOVIE: double (nullable = false)\n |-- userOwnerCounters_CREATE_COMMENT: double (nullable = false)\n |-- userOwnerCounters_CREATE_LIKE: double (nullable = false)\n |-- userOwnerCounters_TEXT: double (nullable = false)\n |-- userOwnerCounters_IMAGE: double (nullable = false)\n |-- userOwnerCounters_VIDEO: double (nullable = false)\n |-- ownerUserCounters_USER_FEED_REMOVE: double (nullable = false)\n |-- ownerUserCounters_USER_PROFILE_VIEW: double (nullable = false)\n |-- ownerUserCounters_VOTE_POLL: double (nullable = false)\n |-- ownerUserCounters_USER_SEND_MESSAGE: double (nullable = false)\n |-- ownerUserCounters_USER_DELETE_MESSAGE: double (nullable = false)\n |-- ownerUserCounters_USER_INTERNAL_LIKE: double (nullable = false)\n |-- ownerUserCounters_USER_INTERNAL_UNLIKE: double (nullable = false)\n |-- ownerUserCounters_USER_STATUS_COMMENT_CREATE: double (nullable = false)\n |-- ownerUserCounters_PHOTO_COMMENT_CREATE: double (nullable = false)\n |-- ownerUserCounters_MOVIE_COMMENT_CREATE: double (nullable = false)\n |-- ownerUserCounters_USER_PHOTO_ALBUM_COMMENT_CREATE: double (nullable = false)\n |-- ownerUserCounters_COMMENT_INTERNAL_LIKE: double (nullable = false)\n |-- ownerUserCounters_USER_FORUM_MESSAGE_CREATE: double (nullable = false)\n |-- ownerUserCounters_PHOTO_MARK_CREATE: double (nullable = false)\n |-- ownerUserCounters_PHOTO_VIEW: double (nullable = false)\n |-- ownerUserCounters_PHOTO_PIN_BATCH_CREATE: double (nullable = false)\n |-- ownerUserCounters_PHOTO_PIN_UPDATE: double (nullable = false)\n |-- ownerUserCounters_USER_PRESENT_SEND: double (nullable = false)\n |-- ownerUserCounters_UNKNOWN: double (nullable = false)\n |-- ownerUserCounters_CREATE_TOPIC: double (nullable = false)\n |-- ownerUserCounters_CREATE_IMAGE: double (nullable = false)\n |-- ownerUserCounters_CREATE_MOVIE: double (nullable = false)\n |-- ownerUserCounters_CREATE_COMMENT: double (nullable = false)\n |-- ownerUserCounters_CREATE_LIKE: double (nullable = false)\n |-- ownerUserCounters_TEXT: double (nullable = false)\n |-- ownerUserCounters_IMAGE: double (nullable = false)\n |-- ownerUserCounters_VIDEO: double (nullable = false)\n |-- membership_status: string (nullable = false)\n |-- membership_statusUpdateDate: long (nullable = false)\n |-- membership_joinDate: long (nullable = false)\n |-- membership_joinRequestDate: long (nullable = false)\n |-- owner_create_date: long (nullable = false)\n |-- owner_birth_date: integer (nullable = false)\n |-- owner_gender: integer (nullable = false)\n |-- owner_status: integer (nullable = false)\n |-- owner_ID_country: long (nullable = false)\n |-- owner_ID_Location: integer (nullable = false)\n |-- owner_is_active: integer (nullable = false)\n |-- owner_is_deleted: integer (nullable = false)\n |-- owner_is_abused: integer (nullable = false)\n |-- owner_is_activated: integer (nullable = false)\n |-- owner_change_datime: long (nullable = false)\n |-- owner_is_semiactivated: integer (nullable = false)\n |-- owner_region: integer (nullable = false)\n |-- user_create_date: long (nullable = false)\n |-- user_birth_date: integer (nullable = false)\n |-- user_gender: integer (nullable = false)\n |-- user_status: integer (nullable = false)\n |-- user_ID_country: long (nullable = false)\n |-- user_ID_Location: integer (nullable = false)\n |-- user_is_active: integer (nullable = false)\n |-- user_is_deleted: integer (nullable = false)\n |-- user_is_abused: integer (nullable = false)\n |-- user_is_activated: integer (nullable = false)\n |-- user_change_datime: long (nullable = false)\n |-- user_is_semiactivated: integer (nullable = false)\n |-- user_region: integer (nullable = false)\n |-- feedback: array (nullable = true)\n |    |-- element: string (containsNull = true)\n |-- objectId: integer (nullable = false)\n |-- auditweights_ageMs: double (nullable = false)\n |-- auditweights_closed: double (nullable = false)\n |-- auditweights_ctr_gender: double (nullable = false)\n |-- auditweights_ctr_high: double (nullable = false)\n |-- auditweights_ctr_negative: double (nullable = false)\n |-- auditweights_dailyRecency: double (nullable = false)\n |-- auditweights_feedOwner_RECOMMENDED_GROUP: double (nullable = false)\n |-- auditweights_feedStats: double (nullable = false)\n |-- auditweights_friendCommentFeeds: double (nullable = false)\n |-- auditweights_friendCommenters: double (nullable = false)\n |-- auditweights_friendLikes: double (nullable = false)\n |-- auditweights_friendLikes_actors: double (nullable = false)\n |-- auditweights_hasDetectedText: double (nullable = false)\n |-- auditweights_hasText: double (nullable = false)\n |-- auditweights_isPymk: double (nullable = false)\n |-- auditweights_isRandom: double (nullable = false)\n |-- auditweights_likersFeedStats_hyper: double (nullable = false)\n |-- auditweights_likersSvd_prelaunch_hyper: double (nullable = false)\n |-- auditweights_matrix: double (nullable = false)\n |-- auditweights_notOriginalPhoto: double (nullable = false)\n |-- auditweights_numDislikes: double (nullable = false)\n |-- auditweights_numLikes: double (nullable = false)\n |-- auditweights_numShows: double (nullable = false)\n |-- auditweights_onlineVideo: double (nullable = false)\n |-- auditweights_partAge: double (nullable = false)\n |-- auditweights_partCtr: double (nullable = false)\n |-- auditweights_partSvd: double (nullable = false)\n |-- auditweights_processedVideo: double (nullable = false)\n |-- auditweights_relationMasks: double (nullable = false)\n |-- auditweights_source_LIVE_TOP: double (nullable = false)\n |-- auditweights_source_MOVIE_TOP: double (nullable = false)\n |-- auditweights_svd_prelaunch: double (nullable = false)\n |-- auditweights_svd_spark: double (nullable = false)\n |-- auditweights_userAge: double (nullable = false)\n |-- auditweights_userOwner_CREATE_COMMENT: double (nullable = false)\n |-- auditweights_userOwner_CREATE_IMAGE: double (nullable = false)\n |-- auditweights_userOwner_CREATE_LIKE: double (nullable = false)\n |-- auditweights_userOwner_IMAGE: double (nullable = false)\n |-- auditweights_userOwner_MOVIE_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_MARK_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_VIEW: double (nullable = false)\n |-- auditweights_userOwner_TEXT: double (nullable = false)\n |-- auditweights_userOwner_UNKNOWN: double (nullable = false)\n |-- auditweights_userOwner_USER_DELETE_MESSAGE: double (nullable = false)\n |-- auditweights_userOwner_USER_FEED_REMOVE: double (nullable = false)\n |-- auditweights_userOwner_USER_FORUM_MESSAGE_CREATE: double (nullable = false)\n |-- auditweights_userOwner_USER_INTERNAL_LIKE: double (nullable = false)\n |-- auditweights_userOwner_USER_INTERNAL_UNLIKE: double (nullable = false)\n |-- auditweights_userOwner_USER_PRESENT_SEND: double (nullable = false)\n |-- auditweights_userOwner_USER_PROFILE_VIEW: double (nullable = false)\n |-- auditweights_userOwner_USER_SEND_MESSAGE: double (nullable = false)\n |-- auditweights_userOwner_USER_STATUS_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_VIDEO: double (nullable = false)\n |-- auditweights_userOwner_VOTE_POLL: double (nullable = false)\n |-- auditweights_x_ActorsRelations: long (nullable = false)\n |-- auditweights_likersSvd_spark_hyper: double (nullable = false)\n |-- auditweights_source_PROMO: double (nullable = false)\n |-- date: date (nullable = true)\n |-- id: string (nullable = false)\n |-- liked: integer (nullable = false)\n\n\u001b[1m\u001b[34mnotNaDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [instanceId_userId: int, instanceId_objectType: string ... 169 more fields]\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620749941094_2128624948",
+   "id": "paragraph_1620749941094_2128624948",
+   "dateCreated": "2021-05-11T19:19:01+0300",
+   "dateStarted": "2021-05-11T19:19:01+0300",
+   "dateFinished": "2021-05-11T19:19:01+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\nnotNaDf.count()",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T19:19:08+0300",
+   "progress": 55.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mres36\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 18286575\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=28"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620749948702_1611515034",
+   "id": "paragraph_1620749948702_1611515034",
+   "dateCreated": "2021-05-11T19:19:08+0300",
+   "dateStarted": "2021-05-11T19:19:08+0300",
+   "dateFinished": "2021-05-11T19:19:09+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\nnotNaDf.na.drop().count()",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T19:04:03+0300",
+   "progress": 89.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mres33\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 18286575\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=27"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620749043341_1195298326",
+   "id": "paragraph_1620749043341_1195298326",
+   "dateCreated": "2021-05-11T19:04:03+0300",
+   "dateStarted": "2021-05-11T19:04:03+0300",
+   "dateFinished": "2021-05-11T19:06:50+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n#### Пустые значения заполнили, посчитаем корреляцию признаков ",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T19:08:31+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -870,111 +1012,24 @@
     "msg": [
      {
       "type": "HTML",
-      "data": "<div class=\"markdown-body\">\n<h4>В датасете слишком много колонок, надо отфильтровать</h4>\n\n</div>"
+      "data": "<div class=\"markdown-body\">\n<h4>Пустые значения заполнили, посчитаем корреляцию признаков</h4>\n\n</div>"
      }
     ]
    },
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620718323033_303420925",
-   "id": "paragraph_1620718323033_303420925",
-   "dateCreated": "2021-05-11T10:32:03+0300",
-   "dateStarted": "2021-05-11T10:32:03+0300",
-   "dateFinished": "2021-05-11T10:32:03+0300",
+   "jobName": "paragraph_1620749311806_263648776",
+   "id": "paragraph_1620749311806_263648776",
+   "dateCreated": "2021-05-11T19:08:31+0300",
+   "dateStarted": "2021-05-11T19:08:31+0300",
+   "dateFinished": "2021-05-11T19:08:31+0300",
    "status": "FINISHED"
   },
   {
-   "text": "%spark\n\ndf.columns.length\n",
+   "text": "%spark\nnotNaDf.columns.foreach(column => {\n    val tmpCol = column + \"tmp\"\n    if (List(\"IntegerType\", \"LongType\").contains(notNaDf.dtypes.toMap.apply(column))) {\n        notNaDf = notNaDf.withColumn(tmpCol, col(column).cast(\"double\"))\n                .drop(column)\n                .withColumnRenamed(tmpCol, column)\n    }\n})",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:19:00+0300",
-   "progress": 0.0,
-   "config": {},
-   "settings": {
-    "params": {},
-    "forms": {}
-   },
-   "results": {
-    "code": "SUCCESS",
-    "msg": [
-     {
-      "type": "TEXT",
-      "data": "\u001b[1m\u001b[34mres7\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 171\n"
-     }
-    ]
-   },
-   "apps": [],
-   "runtimeInfos": {},
-   "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717540380_161429781",
-   "id": "paragraph_1620717540380_161429781",
-   "dateCreated": "2021-05-11T10:19:00+0300",
-   "dateStarted": "2021-05-11T10:19:00+0300",
-   "dateFinished": "2021-05-11T10:19:00+0300",
-   "status": "FINISHED"
-  },
-  {
-   "text": "%spark\n\nval rowFilter = (s: String) => (s.startsWith(\"audit\") || s.startsWith(\"liked\")) && !s.contains(\"clientType\") && !s.contains(\"experiment\")\nvar auditDf = df.select(df.columns.filter(rowFilter).map(df(_)): _*)\nauditDf.printSchema()\n",
-   "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:19:00+0300",
-   "progress": 0.0,
-   "config": {},
-   "settings": {
-    "params": {},
-    "forms": {}
-   },
-   "results": {
-    "code": "SUCCESS",
-    "msg": [
-     {
-      "type": "TEXT",
-      "data": "root\n |-- audit_pos: long (nullable = true)\n |-- audit_timestamp: long (nullable = true)\n |-- audit_timePassed: long (nullable = true)\n |-- audit_resourceType: long (nullable = true)\n |-- auditweights_ageMs: double (nullable = true)\n |-- auditweights_closed: double (nullable = true)\n |-- auditweights_ctr_gender: double (nullable = true)\n |-- auditweights_ctr_high: double (nullable = true)\n |-- auditweights_ctr_negative: double (nullable = true)\n |-- auditweights_dailyRecency: double (nullable = true)\n |-- auditweights_feedOwner_RECOMMENDED_GROUP: double (nullable = true)\n |-- auditweights_feedStats: double (nullable = true)\n |-- auditweights_friendCommentFeeds: double (nullable = true)\n |-- auditweights_friendCommenters: double (nullable = true)\n |-- auditweights_friendLikes: double (nullable = true)\n |-- auditweights_friendLikes_actors: double (nullable = true)\n |-- auditweights_hasDetectedText: double (nullable = true)\n |-- auditweights_hasText: double (nullable = true)\n |-- auditweights_isPymk: double (nullable = true)\n |-- auditweights_isRandom: double (nullable = true)\n |-- auditweights_likersFeedStats_hyper: double (nullable = true)\n |-- auditweights_likersSvd_prelaunch_hyper: double (nullable = true)\n |-- auditweights_matrix: double (nullable = true)\n |-- auditweights_notOriginalPhoto: double (nullable = true)\n |-- auditweights_numDislikes: double (nullable = true)\n |-- auditweights_numLikes: double (nullable = true)\n |-- auditweights_numShows: double (nullable = true)\n |-- auditweights_onlineVideo: double (nullable = true)\n |-- auditweights_partAge: double (nullable = true)\n |-- auditweights_partCtr: double (nullable = true)\n |-- auditweights_partSvd: double (nullable = true)\n |-- auditweights_processedVideo: double (nullable = true)\n |-- auditweights_relationMasks: double (nullable = true)\n |-- auditweights_source_LIVE_TOP: double (nullable = true)\n |-- auditweights_source_MOVIE_TOP: double (nullable = true)\n |-- auditweights_svd_prelaunch: double (nullable = true)\n |-- auditweights_svd_spark: double (nullable = true)\n |-- auditweights_userAge: double (nullable = true)\n |-- auditweights_userOwner_CREATE_COMMENT: double (nullable = true)\n |-- auditweights_userOwner_CREATE_IMAGE: double (nullable = true)\n |-- auditweights_userOwner_CREATE_LIKE: double (nullable = true)\n |-- auditweights_userOwner_IMAGE: double (nullable = true)\n |-- auditweights_userOwner_MOVIE_COMMENT_CREATE: double (nullable = true)\n |-- auditweights_userOwner_PHOTO_COMMENT_CREATE: double (nullable = true)\n |-- auditweights_userOwner_PHOTO_MARK_CREATE: double (nullable = true)\n |-- auditweights_userOwner_PHOTO_VIEW: double (nullable = true)\n |-- auditweights_userOwner_TEXT: double (nullable = true)\n |-- auditweights_userOwner_UNKNOWN: double (nullable = true)\n |-- auditweights_userOwner_USER_DELETE_MESSAGE: double (nullable = true)\n |-- auditweights_userOwner_USER_FEED_REMOVE: double (nullable = true)\n |-- auditweights_userOwner_USER_FORUM_MESSAGE_CREATE: double (nullable = true)\n |-- auditweights_userOwner_USER_INTERNAL_LIKE: double (nullable = true)\n |-- auditweights_userOwner_USER_INTERNAL_UNLIKE: double (nullable = true)\n |-- auditweights_userOwner_USER_PRESENT_SEND: double (nullable = true)\n |-- auditweights_userOwner_USER_PROFILE_VIEW: double (nullable = true)\n |-- auditweights_userOwner_USER_SEND_MESSAGE: double (nullable = true)\n |-- auditweights_userOwner_USER_STATUS_COMMENT_CREATE: double (nullable = true)\n |-- auditweights_userOwner_VIDEO: double (nullable = true)\n |-- auditweights_userOwner_VOTE_POLL: double (nullable = true)\n |-- auditweights_x_ActorsRelations: long (nullable = true)\n |-- auditweights_likersSvd_spark_hyper: double (nullable = true)\n |-- auditweights_source_PROMO: double (nullable = true)\n |-- liked: integer (nullable = false)\n\n\u001b[1m\u001b[34mrowFilter\u001b[0m: \u001b[1m\u001b[32mString => Boolean\u001b[0m = <function1>\n\u001b[1m\u001b[34mauditDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [audit_pos: bigint, audit_timestamp: bigint ... 61 more fields]\n"
-     }
-    ]
-   },
-   "apps": [],
-   "runtimeInfos": {},
-   "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717540666_1446574356",
-   "id": "paragraph_1620717540666_1446574356",
-   "dateCreated": "2021-05-11T10:19:00+0300",
-   "dateStarted": "2021-05-11T10:19:00+0300",
-   "dateFinished": "2021-05-11T10:19:01+0300",
-   "status": "FINISHED"
-  },
-  {
-   "text": "%spark\n\nauditDf = auditDf.na.fill(0)",
-   "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:19:01+0300",
-   "progress": 0.0,
-   "config": {},
-   "settings": {
-    "params": {},
-    "forms": {}
-   },
-   "results": {
-    "code": "SUCCESS",
-    "msg": [
-     {
-      "type": "TEXT",
-      "data": "auditDf: org.apache.spark.sql.DataFrame = [audit_pos: bigint, audit_timestamp: bigint ... 61 more fields]\n"
-     }
-    ]
-   },
-   "apps": [],
-   "runtimeInfos": {},
-   "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717541343_1053335003",
-   "id": "paragraph_1620717541343_1053335003",
-   "dateCreated": "2021-05-11T10:19:01+0300",
-   "dateStarted": "2021-05-11T10:19:01+0300",
-   "dateFinished": "2021-05-11T10:19:01+0300",
-   "status": "FINISHED"
-  },
-  {
-   "text": "%spark\nfor (column <- auditDf.columns) {\n    val tmpCol = column + \"tmp\"\n    auditDf = auditDf.withColumn(tmpCol, col(column).cast(\"double\"))\n            .drop(column)\n            .withColumnRenamed(tmpCol, column)\n}",
-   "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:19:01+0300",
+   "dateUpdated": "2021-05-11T19:21:26+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -988,17 +1043,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717541950_1464575053",
-   "id": "paragraph_1620717541950_1464575053",
-   "dateCreated": "2021-05-11T10:19:01+0300",
-   "dateStarted": "2021-05-11T10:19:01+0300",
-   "dateFinished": "2021-05-11T10:19:04+0300",
+   "jobName": "paragraph_1620750086447_1108988474",
+   "id": "paragraph_1620750086447_1108988474",
+   "dateCreated": "2021-05-11T19:21:26+0300",
+   "dateStarted": "2021-05-11T19:21:26+0300",
+   "dateFinished": "2021-05-11T19:21:29+0300",
    "status": "FINISHED"
   },
   {
-   "text": "%spark\nauditDf.printSchema()",
+   "text": "%spark\nnotNaDf.printSchema()",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:19:04+0300",
+   "dateUpdated": "2021-05-11T19:21:31+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -1010,40 +1065,28 @@
     "msg": [
      {
       "type": "TEXT",
-      "data": "root\n |-- audit_pos: double (nullable = false)\n |-- audit_timestamp: double (nullable = false)\n |-- audit_timePassed: double (nullable = false)\n |-- audit_resourceType: double (nullable = false)\n |-- auditweights_ageMs: double (nullable = false)\n |-- auditweights_closed: double (nullable = false)\n |-- auditweights_ctr_gender: double (nullable = false)\n |-- auditweights_ctr_high: double (nullable = false)\n |-- auditweights_ctr_negative: double (nullable = false)\n |-- auditweights_dailyRecency: double (nullable = false)\n |-- auditweights_feedOwner_RECOMMENDED_GROUP: double (nullable = false)\n |-- auditweights_feedStats: double (nullable = false)\n |-- auditweights_friendCommentFeeds: double (nullable = false)\n |-- auditweights_friendCommenters: double (nullable = false)\n |-- auditweights_friendLikes: double (nullable = false)\n |-- auditweights_friendLikes_actors: double (nullable = false)\n |-- auditweights_hasDetectedText: double (nullable = false)\n |-- auditweights_hasText: double (nullable = false)\n |-- auditweights_isPymk: double (nullable = false)\n |-- auditweights_isRandom: double (nullable = false)\n |-- auditweights_likersFeedStats_hyper: double (nullable = false)\n |-- auditweights_likersSvd_prelaunch_hyper: double (nullable = false)\n |-- auditweights_matrix: double (nullable = false)\n |-- auditweights_notOriginalPhoto: double (nullable = false)\n |-- auditweights_numDislikes: double (nullable = false)\n |-- auditweights_numLikes: double (nullable = false)\n |-- auditweights_numShows: double (nullable = false)\n |-- auditweights_onlineVideo: double (nullable = false)\n |-- auditweights_partAge: double (nullable = false)\n |-- auditweights_partCtr: double (nullable = false)\n |-- auditweights_partSvd: double (nullable = false)\n |-- auditweights_processedVideo: double (nullable = false)\n |-- auditweights_relationMasks: double (nullable = false)\n |-- auditweights_source_LIVE_TOP: double (nullable = false)\n |-- auditweights_source_MOVIE_TOP: double (nullable = false)\n |-- auditweights_svd_prelaunch: double (nullable = false)\n |-- auditweights_svd_spark: double (nullable = false)\n |-- auditweights_userAge: double (nullable = false)\n |-- auditweights_userOwner_CREATE_COMMENT: double (nullable = false)\n |-- auditweights_userOwner_CREATE_IMAGE: double (nullable = false)\n |-- auditweights_userOwner_CREATE_LIKE: double (nullable = false)\n |-- auditweights_userOwner_IMAGE: double (nullable = false)\n |-- auditweights_userOwner_MOVIE_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_MARK_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_VIEW: double (nullable = false)\n |-- auditweights_userOwner_TEXT: double (nullable = false)\n |-- auditweights_userOwner_UNKNOWN: double (nullable = false)\n |-- auditweights_userOwner_USER_DELETE_MESSAGE: double (nullable = false)\n |-- auditweights_userOwner_USER_FEED_REMOVE: double (nullable = false)\n |-- auditweights_userOwner_USER_FORUM_MESSAGE_CREATE: double (nullable = false)\n |-- auditweights_userOwner_USER_INTERNAL_LIKE: double (nullable = false)\n |-- auditweights_userOwner_USER_INTERNAL_UNLIKE: double (nullable = false)\n |-- auditweights_userOwner_USER_PRESENT_SEND: double (nullable = false)\n |-- auditweights_userOwner_USER_PROFILE_VIEW: double (nullable = false)\n |-- auditweights_userOwner_USER_SEND_MESSAGE: double (nullable = false)\n |-- auditweights_userOwner_USER_STATUS_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_VIDEO: double (nullable = false)\n |-- auditweights_userOwner_VOTE_POLL: double (nullable = false)\n |-- auditweights_x_ActorsRelations: double (nullable = false)\n |-- auditweights_likersSvd_spark_hyper: double (nullable = false)\n |-- auditweights_source_PROMO: double (nullable = false)\n |-- liked: double (nullable = false)\n\n"
+      "data": "root\n |-- instanceId_objectType: string (nullable = false)\n |-- audit_clientType: string (nullable = false)\n |-- audit_experiment: string (nullable = false)\n |-- metadata_ownerType: string (nullable = false)\n |-- metadata_platform: string (nullable = false)\n |-- metadata_options: array (nullable = true)\n |    |-- element: string (containsNull = true)\n |-- userOwnerCounters_USER_FEED_REMOVE: double (nullable = false)\n |-- userOwnerCounters_USER_PROFILE_VIEW: double (nullable = false)\n |-- userOwnerCounters_VOTE_POLL: double (nullable = false)\n |-- userOwnerCounters_USER_SEND_MESSAGE: double (nullable = false)\n |-- userOwnerCounters_USER_DELETE_MESSAGE: double (nullable = false)\n |-- userOwnerCounters_USER_INTERNAL_LIKE: double (nullable = false)\n |-- userOwnerCounters_USER_INTERNAL_UNLIKE: double (nullable = false)\n |-- userOwnerCounters_USER_STATUS_COMMENT_CREATE: double (nullable = false)\n |-- userOwnerCounters_PHOTO_COMMENT_CREATE: double (nullable = false)\n |-- userOwnerCounters_MOVIE_COMMENT_CREATE: double (nullable = false)\n |-- userOwnerCounters_USER_PHOTO_ALBUM_COMMENT_CREATE: double (nullable = false)\n |-- userOwnerCounters_COMMENT_INTERNAL_LIKE: double (nullable = false)\n |-- userOwnerCounters_USER_FORUM_MESSAGE_CREATE: double (nullable = false)\n |-- userOwnerCounters_PHOTO_MARK_CREATE: double (nullable = false)\n |-- userOwnerCounters_PHOTO_VIEW: double (nullable = false)\n |-- userOwnerCounters_PHOTO_PIN_BATCH_CREATE: double (nullable = false)\n |-- userOwnerCounters_PHOTO_PIN_UPDATE: double (nullable = false)\n |-- userOwnerCounters_USER_PRESENT_SEND: double (nullable = false)\n |-- userOwnerCounters_UNKNOWN: double (nullable = false)\n |-- userOwnerCounters_CREATE_TOPIC: double (nullable = false)\n |-- userOwnerCounters_CREATE_IMAGE: double (nullable = false)\n |-- userOwnerCounters_CREATE_MOVIE: double (nullable = false)\n |-- userOwnerCounters_CREATE_COMMENT: double (nullable = false)\n |-- userOwnerCounters_CREATE_LIKE: double (nullable = false)\n |-- userOwnerCounters_TEXT: double (nullable = false)\n |-- userOwnerCounters_IMAGE: double (nullable = false)\n |-- userOwnerCounters_VIDEO: double (nullable = false)\n |-- ownerUserCounters_USER_FEED_REMOVE: double (nullable = false)\n |-- ownerUserCounters_USER_PROFILE_VIEW: double (nullable = false)\n |-- ownerUserCounters_VOTE_POLL: double (nullable = false)\n |-- ownerUserCounters_USER_SEND_MESSAGE: double (nullable = false)\n |-- ownerUserCounters_USER_DELETE_MESSAGE: double (nullable = false)\n |-- ownerUserCounters_USER_INTERNAL_LIKE: double (nullable = false)\n |-- ownerUserCounters_USER_INTERNAL_UNLIKE: double (nullable = false)\n |-- ownerUserCounters_USER_STATUS_COMMENT_CREATE: double (nullable = false)\n |-- ownerUserCounters_PHOTO_COMMENT_CREATE: double (nullable = false)\n |-- ownerUserCounters_MOVIE_COMMENT_CREATE: double (nullable = false)\n |-- ownerUserCounters_USER_PHOTO_ALBUM_COMMENT_CREATE: double (nullable = false)\n |-- ownerUserCounters_COMMENT_INTERNAL_LIKE: double (nullable = false)\n |-- ownerUserCounters_USER_FORUM_MESSAGE_CREATE: double (nullable = false)\n |-- ownerUserCounters_PHOTO_MARK_CREATE: double (nullable = false)\n |-- ownerUserCounters_PHOTO_VIEW: double (nullable = false)\n |-- ownerUserCounters_PHOTO_PIN_BATCH_CREATE: double (nullable = false)\n |-- ownerUserCounters_PHOTO_PIN_UPDATE: double (nullable = false)\n |-- ownerUserCounters_USER_PRESENT_SEND: double (nullable = false)\n |-- ownerUserCounters_UNKNOWN: double (nullable = false)\n |-- ownerUserCounters_CREATE_TOPIC: double (nullable = false)\n |-- ownerUserCounters_CREATE_IMAGE: double (nullable = false)\n |-- ownerUserCounters_CREATE_MOVIE: double (nullable = false)\n |-- ownerUserCounters_CREATE_COMMENT: double (nullable = false)\n |-- ownerUserCounters_CREATE_LIKE: double (nullable = false)\n |-- ownerUserCounters_TEXT: double (nullable = false)\n |-- ownerUserCounters_IMAGE: double (nullable = false)\n |-- ownerUserCounters_VIDEO: double (nullable = false)\n |-- membership_status: string (nullable = false)\n |-- feedback: array (nullable = true)\n |    |-- element: string (containsNull = true)\n |-- auditweights_ageMs: double (nullable = false)\n |-- auditweights_closed: double (nullable = false)\n |-- auditweights_ctr_gender: double (nullable = false)\n |-- auditweights_ctr_high: double (nullable = false)\n |-- auditweights_ctr_negative: double (nullable = false)\n |-- auditweights_dailyRecency: double (nullable = false)\n |-- auditweights_feedOwner_RECOMMENDED_GROUP: double (nullable = false)\n |-- auditweights_feedStats: double (nullable = false)\n |-- auditweights_friendCommentFeeds: double (nullable = false)\n |-- auditweights_friendCommenters: double (nullable = false)\n |-- auditweights_friendLikes: double (nullable = false)\n |-- auditweights_friendLikes_actors: double (nullable = false)\n |-- auditweights_hasDetectedText: double (nullable = false)\n |-- auditweights_hasText: double (nullable = false)\n |-- auditweights_isPymk: double (nullable = false)\n |-- auditweights_isRandom: double (nullable = false)\n |-- auditweights_likersFeedStats_hyper: double (nullable = false)\n |-- auditweights_likersSvd_prelaunch_hyper: double (nullable = false)\n |-- auditweights_matrix: double (nullable = false)\n |-- auditweights_notOriginalPhoto: double (nullable = false)\n |-- auditweights_numDislikes: double (nullable = false)\n |-- auditweights_numLikes: double (nullable = false)\n |-- auditweights_numShows: double (nullable = false)\n |-- auditweights_onlineVideo: double (nullable = false)\n |-- auditweights_partAge: double (nullable = false)\n |-- auditweights_partCtr: double (nullable = false)\n |-- auditweights_partSvd: double (nullable = false)\n |-- auditweights_processedVideo: double (nullable = false)\n |-- auditweights_relationMasks: double (nullable = false)\n |-- auditweights_source_LIVE_TOP: double (nullable = false)\n |-- auditweights_source_MOVIE_TOP: double (nullable = false)\n |-- auditweights_svd_prelaunch: double (nullable = false)\n |-- auditweights_svd_spark: double (nullable = false)\n |-- auditweights_userAge: double (nullable = false)\n |-- auditweights_userOwner_CREATE_COMMENT: double (nullable = false)\n |-- auditweights_userOwner_CREATE_IMAGE: double (nullable = false)\n |-- auditweights_userOwner_CREATE_LIKE: double (nullable = false)\n |-- auditweights_userOwner_IMAGE: double (nullable = false)\n |-- auditweights_userOwner_MOVIE_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_MARK_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_VIEW: double (nullable = false)\n |-- auditweights_userOwner_TEXT: double (nullable = false)\n |-- auditweights_userOwner_UNKNOWN: double (nullable = false)\n |-- auditweights_userOwner_USER_DELETE_MESSAGE: double (nullable = false)\n |-- auditweights_userOwner_USER_FEED_REMOVE: double (nullable = false)\n |-- auditweights_userOwner_USER_FORUM_MESSAGE_CREATE: double (nullable = false)\n |-- auditweights_userOwner_USER_INTERNAL_LIKE: double (nullable = false)\n |-- auditweights_userOwner_USER_INTERNAL_UNLIKE: double (nullable = false)\n |-- auditweights_userOwner_USER_PRESENT_SEND: double (nullable = false)\n |-- auditweights_userOwner_USER_PROFILE_VIEW: double (nullable = false)\n |-- auditweights_userOwner_USER_SEND_MESSAGE: double (nullable = false)\n |-- auditweights_userOwner_USER_STATUS_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_VIDEO: double (nullable = false)\n |-- auditweights_userOwner_VOTE_POLL: double (nullable = false)\n |-- auditweights_likersSvd_spark_hyper: double (nullable = false)\n |-- auditweights_source_PROMO: double (nullable = false)\n |-- date: date (nullable = true)\n |-- id: string (nullable = false)\n |-- instanceId_userId: double (nullable = false)\n |-- instanceId_objectId: double (nullable = false)\n |-- audit_pos: double (nullable = false)\n |-- audit_timestamp: double (nullable = false)\n |-- audit_timePassed: double (nullable = false)\n |-- audit_resourceType: double (nullable = false)\n |-- metadata_ownerId: double (nullable = false)\n |-- metadata_createdAt: double (nullable = false)\n |-- metadata_authorId: double (nullable = false)\n |-- metadata_applicationId: double (nullable = false)\n |-- metadata_numCompanions: double (nullable = false)\n |-- metadata_numPhotos: double (nullable = false)\n |-- metadata_numPolls: double (nullable = false)\n |-- metadata_numSymbols: double (nullable = false)\n |-- metadata_numTokens: double (nullable = false)\n |-- metadata_numVideos: double (nullable = false)\n |-- metadata_totalVideoLength: double (nullable = false)\n |-- relationsMask: double (nullable = false)\n |-- membership_statusUpdateDate: double (nullable = false)\n |-- membership_joinDate: double (nullable = false)\n |-- membership_joinRequestDate: double (nullable = false)\n |-- owner_create_date: double (nullable = false)\n |-- owner_birth_date: double (nullable = false)\n |-- owner_gender: double (nullable = false)\n |-- owner_status: double (nullable = false)\n |-- owner_ID_country: double (nullable = false)\n |-- owner_ID_Location: double (nullable = false)\n |-- owner_is_active: double (nullable = false)\n |-- owner_is_deleted: double (nullable = false)\n |-- owner_is_abused: double (nullable = false)\n |-- owner_is_activated: double (nullable = false)\n |-- owner_change_datime: double (nullable = false)\n |-- owner_is_semiactivated: double (nullable = false)\n |-- owner_region: double (nullable = false)\n |-- user_create_date: double (nullable = false)\n |-- user_birth_date: double (nullable = false)\n |-- user_gender: double (nullable = false)\n |-- user_status: double (nullable = false)\n |-- user_ID_country: double (nullable = false)\n |-- user_ID_Location: double (nullable = false)\n |-- user_is_active: double (nullable = false)\n |-- user_is_deleted: double (nullable = false)\n |-- user_is_abused: double (nullable = false)\n |-- user_is_activated: double (nullable = false)\n |-- user_change_datime: double (nullable = false)\n |-- user_is_semiactivated: double (nullable = false)\n |-- user_region: double (nullable = false)\n |-- objectId: double (nullable = false)\n |-- auditweights_x_ActorsRelations: double (nullable = false)\n |-- liked: double (nullable = false)\n\n"
      }
     ]
    },
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717544491_1020975394",
-   "id": "paragraph_1620717544491_1020975394",
-   "dateCreated": "2021-05-11T10:19:04+0300",
-   "dateStarted": "2021-05-11T10:19:04+0300",
-   "dateFinished": "2021-05-11T10:19:04+0300",
+   "jobName": "paragraph_1620750091149_571776762",
+   "id": "paragraph_1620750091149_571776762",
+   "dateCreated": "2021-05-11T19:21:31+0300",
+   "dateStarted": "2021-05-11T19:21:31+0300",
+   "dateFinished": "2021-05-11T19:21:31+0300",
    "status": "FINISHED"
   },
   {
-   "text": "%spark\nimport org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.{Matrix, Vectors}\nimport org.apache.spark.ml.stat.Correlation\nimport org.apache.spark.sql.Row\nimport spark.implicits._\n\nval sample = auditDf.sample(withReplacement = true, 0.05)\n\nval assembler = new VectorAssembler()\n        .setInputCols(sample.columns)\n        .setOutputCol(\"corr\")\n        .transform(sample)\n        .select(\"corr\")\nval corr = Correlation.corr(assembler, \"corr\")\ncorr.show(10)\n",
+   "text": "%spark\nimport org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.SparseVector\nimport org.apache.spark.mllib.stat.Statistics\nimport spark.implicits._\nimport org.apache.spark.mllib.linalg.{Vector, Vectors}\n\nval notStrCols = notNaDf.columns.filter(column => \"DoubleType\" == notNaDf.dtypes.toMap.apply(column))\nval corr = Statistics.corr(new VectorAssembler()\n        .setInputCols(notStrCols)\n        .setOutputCol(\"corr\")\n        .transform(notNaDf)\n        .select(\"corr\")\n        .rdd\n        .map(vec => Vectors.fromML(vec.getAs[SparseVector](\"corr\").toDense)))\n\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:19:04+0300",
+   "dateUpdated": "2021-05-11T20:23:26+0300",
    "progress": 100.0,
-   "config": {
-    "results": [
-     {}
-    ]
-   },
+   "config": {},
    "settings": {
-    "params": {
-     "bdtMeta": {
-      "inlay": {
-       "state": {
-        "currentPage": "Console"
-       }
-      }
-     }
-    },
+    "params": {},
     "forms": {}
    },
    "results": {
@@ -1051,7 +1094,7 @@
     "msg": [
      {
       "type": "TEXT",
-      "data": "+--------------------+\n|       pearson(corr)|\n+--------------------+\n|1.0              ...|\n+--------------------+\n\nimport org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.{Matrix, Vectors}\nimport org.apache.spark.ml.stat.Correlation\nimport org.apache.spark.sql.Row\nimport spark.implicits._\n\u001b[1m\u001b[34msample\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [audit_pos: double, audit_timestamp: double ... 61 more fields]\n\u001b[1m\u001b[34massembler\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [corr: vector]\n\u001b[1m\u001b[34mcorr\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [pearson(corr): matrix]\n"
+      "data": "import org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.SparseVector\nimport org.apache.spark.mllib.stat.Statistics\nimport spark.implicits._\nimport org.apache.spark.mllib.linalg.{Vector, Vectors}\n\u001b[1m\u001b[34mnotStrCols\u001b[0m: \u001b[1m\u001b[32mArray[String]\u001b[0m = Array(userOwnerCounters_USER_FEED_REMOVE, userOwnerCounters_USER_PROFILE_VIEW, userOwnerCounters_VOTE_POLL, userOwnerCounters_USER_SEND_MESSAGE, userOwnerCounters_USER_DELETE_MESSAGE, userOwnerCounters_USER_INTERNAL_LIKE, userOwnerCounters_USER_INTERNAL_UNLIKE, userOwnerCounters_USER_STATUS_COMMENT_CREATE, userOwnerCounters_PHOTO_COMMENT_CREATE, userOwnerCounters_MOVIE_COMMENT_CREATE, userOwnerCounters_USER_PHOTO_ALBUM_COMMENT_CREATE, userOwnerCounters_COMMENT_INTERNAL_LIKE, userOwnerCounters_USER_FORUM_MESSAGE_CR..."
      }
     ]
    },
@@ -1064,30 +1107,30 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=11"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=544"
       },
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=12"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=545"
       },
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=13"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=546"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717544732_164401473",
-   "id": "paragraph_1620717544732_164401473",
-   "dateCreated": "2021-05-11T10:19:04+0300",
-   "dateStarted": "2021-05-11T10:19:04+0300",
-   "dateFinished": "2021-05-11T10:20:28+0300",
+   "jobName": "paragraph_1620753806226_58630610",
+   "id": "paragraph_1620753806226_58630610",
+   "dateCreated": "2021-05-11T20:23:26+0300",
+   "dateStarted": "2021-05-11T20:23:26+0300",
+   "dateFinished": "2021-05-11T20:30:16+0300",
    "status": "FINISHED"
   },
   {
-   "text": "%spark\n\ncorr.collect()(0).mkString.split(\" \").toSeq\n",
+   "text": "%spark\nimport org.apache.spark.sql.SparkSession\nimport org.apache.spark.sql.types.StructType\n\nval likedIdx = notStrCols.zipWithIndex.find(_._1 == \"liked\").get._2\ncorr.rowIter.toList(likedIdx).toArray.toSeq\n        .zip(notStrCols)\n        .toDF()\n        .na.fill(0)\n        .select(abs($\"_1\") as \"corr\", $\"_2\" as \"colName\")\n        .orderBy(asc(\"corr\"))\n        .show()\n\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:20:28+0300",
+   "dateUpdated": "2021-05-11T21:31:49+0300",
    "progress": 0.0,
    "config": {
     "results": [
@@ -1099,11 +1142,22 @@
      "bdtMeta": {
       "inlay": {
        "state": {
-        "currentPage": "Table",
-        "table": {
-         "columnWidths": {
-          "pearson(feature)": 175.0
-         }
+        "currentPage": "Chart",
+        "chart": {
+         "series": [
+          {
+           "type": "Pie",
+           "values": {
+            "column": "corr",
+            "index": 0.0
+           },
+           "labels": {
+            "column": "colName",
+            "index": 1.0
+           },
+           "showPercents": true
+          }
+         ]
         }
        }
       }
@@ -1116,47 +1170,31 @@
     "msg": [
      {
       "type": "TEXT",
-      "data": "\u001b[1m\u001b[34mres12\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m =\nWrappedArray(1.0, \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", 0.002262906537394305, \"\", \"\", \"\", ..., (63, total)\n0.002262906537394305, \"\", \"\", \"\", 1.0, \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", ...\n0.009401842949685428, \"\", \"\", \"\", 0.011268929296477869, \"\", \"\", \"\", ...\n-0.0027360742620208467, \"\", 0.008818237234949344, \"\", \"\", \"\", ...\n-0.05541785505046595, \"\", \"\", \"\", 0.0786190163634104, \"\", \"\", \"\", \"\", \"\", ...\nNaN, \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", NaN, \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", ...\n-0.002394207515645804, \"\", \"\", -0.02823233058837669, \"\", \"\", \"\", ...\n-0.0385236616205550..."
+      "data": "+----+--------------------+\n|corr|             colName|\n+----+--------------------+\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0| owner_change_datime|\n| 0.0|userOwnerCounters...|\n| 0.0|     owner_is_abused|\n| 0.0|userOwnerCounters...|\n| 0.0|owner_is_semiacti...|\n| 0.0|userOwnerCounters...|\n| 0.0|  owner_is_activated|\n| 0.0|userOwnerCounters...|\n| 0.0|        owner_region|\n+----+--------------------+\nonly showing top 20 rows\n\nimport org.apache.spark.sql.SparkSession\nimport org.apache.spark.sql.types.StructType\n\u001b[1m\u001b[34mlikedIdx\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 160\n"
      }
     ]
    },
    "apps": [],
-   "runtimeInfos": {},
-   "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717628800_2139712719",
-   "id": "paragraph_1620717628800_2139712719",
-   "dateCreated": "2021-05-11T10:20:28+0300",
-   "dateStarted": "2021-05-11T10:20:28+0300",
-   "dateFinished": "2021-05-11T10:20:29+0300",
-   "status": "FINISHED"
-  },
-  {
-   "text": "%md\n\n#### Очень неудобно, так что будем изобретать свой велосипед. Рассчитаем корреляцию признака с таргетом.\n",
-   "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:20:29+0300",
-   "progress": 0.0,
-   "config": {},
-   "settings": {
-    "params": {},
-    "forms": {}
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=550"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
    },
-   "results": {
-    "code": "SUCCESS",
-    "msg": [
-     {
-      "type": "HTML",
-      "data": "<div class=\"markdown-body\">\n<h4>Очень неудобно, так что будем изобретать свой велосипед. Рассчитаем корреляцию признака с таргетом.</h4>\n\n</div>"
-     }
-    ]
-   },
-   "apps": [],
-   "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717629197_1286590075",
-   "id": "paragraph_1620717629197_1286590075",
-   "dateCreated": "2021-05-11T10:20:29+0300",
-   "dateStarted": "2021-05-11T10:20:29+0300",
-   "dateFinished": "2021-05-11T10:20:29+0300",
+   "jobName": "paragraph_1620757909909_1094605068",
+   "id": "paragraph_1620757909909_1094605068",
+   "dateCreated": "2021-05-11T21:31:49+0300",
+   "dateStarted": "2021-05-11T21:31:49+0300",
+   "dateFinished": "2021-05-11T21:31:50+0300",
    "status": "FINISHED"
   }
  ],
