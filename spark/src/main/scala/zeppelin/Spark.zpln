@@ -3,7 +3,7 @@
   {
    "text": "%md\n### В данном ноутбуке будет рассматриваться датасет SNA Hackathon - Коллаборативная система \n#####  Описание: \n* instanceId_userId — идентификатор пользователя (анонимизированный)\n* instanceId_objectType — тип объекта\n* instanceId_objectId — идентификатор объекта (анонимизированный)\n* feedback — массив с типами реакций пользователя (наличие в массиве токена Liked говорит о том, что объект получил «класс» от пользователя)\n* audit_clientType — тип платформы, с которой зашёл пользователь\n* audit_timestamp — время, когда строилась лента\n* metadata_ownerId — автор показанного объекта (анонимизированный)\n* metadata_createdAt — дата создания показанного объекта\n* audit_* — расширенная информация о контексте построения ленты;\n* metadata_* — расширенная информация о самом объекте;\n* userOwnerCounters_* — информация о предыдущих взаимодействиях пользователя и автора контента;\n* ownerUserCounters_* — информация о предыдущих взаимодействиях автора контента и пользователя;\n* membership_* — информация о членстве пользователя в группе, где опубликован контент;\n* user_* — подробная информация о пользователе;\n* auditweights_* — большое количество runtime-признаков, извлечённых текущей системой.",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:04+0300",
+   "dateUpdated": "2021-05-11T21:41:07+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -22,17 +22,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717484659_536835475",
-   "id": "paragraph_1620717484659_536835475",
-   "dateCreated": "2021-05-11T10:18:04+0300",
-   "dateStarted": "2021-05-11T10:18:04+0300",
-   "dateFinished": "2021-05-11T10:18:04+0300",
+   "jobName": "paragraph_1620758467038_923540430",
+   "id": "paragraph_1620758467038_923540430",
+   "dateCreated": "2021-05-11T21:41:07+0300",
+   "dateStarted": "2021-05-11T21:41:07+0300",
+   "dateFinished": "2021-05-11T21:41:07+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\n\nimport org.apache.spark.sql.DataFrame\n\nimport scala.collection.{immutable, mutable}\n\nvar df = spark.read.parquet(\"/home/mikhail/IdeaProjects/BigDataML/data/SNAHackathon2019/collabTrain/\")\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:04+0300",
+   "dateUpdated": "2021-05-11T21:41:07+0300",
    "progress": 0.0,
    "config": {
     "editorSetting": {
@@ -69,27 +69,27 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=0"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=554"
       },
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=1"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=555"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717484816_1604189519",
-   "id": "paragraph_1620717484816_1604189519",
-   "dateCreated": "2021-05-11T10:18:04+0300",
-   "dateStarted": "2021-05-11T10:18:04+0300",
-   "dateFinished": "2021-05-11T10:18:19+0300",
+   "jobName": "paragraph_1620758467222_2091323084",
+   "id": "paragraph_1620758467222_2091323084",
+   "dateCreated": "2021-05-11T21:41:07+0300",
+   "dateStarted": "2021-05-11T21:41:07+0300",
+   "dateFinished": "2021-05-11T21:41:08+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\n\ndf.columns\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:19+0300",
+   "dateUpdated": "2021-05-11T21:41:08+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -110,24 +110,24 @@
     "msg": [
      {
       "type": "TEXT",
-      "data": "\u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32mArray[String]\u001b[0m = Array(instanceId_userId, instanceId_objectType, instanceId_objectId, audit_pos, audit_clientType, audit_timestamp, audit_timePassed, audit_experiment, audit_resourceType, metadata_ownerId, metadata_ownerType, metadata_createdAt, metadata_authorId, metadata_applicationId, metadata_numCompanions, metadata_numPhotos, metadata_numPolls, metadata_numSymbols, metadata_numTokens, metadata_numVideos, metadata_platform, metadata_totalVideoLength, metadata_options, relationsMask, userOwnerCounters_USER_FEED_REMOVE, userOwnerCounters_USER_PROFILE_VIEW, userOwnerCounters_VOTE_POLL, userOwnerCounters_USER_SEND_MESSAGE, userOwnerCounters_USER_DELETE_MESSAGE, userOwnerCounters_USER_INTERNAL_LIKE, userOwnerCounters_USER_INTERNAL_UNLIKE, userOwnerCounters_..."
+      "data": "\u001b[1m\u001b[34mres134\u001b[0m: \u001b[1m\u001b[32mArray[String]\u001b[0m = Array(instanceId_userId, instanceId_objectType, instanceId_objectId, audit_pos, audit_clientType, audit_timestamp, audit_timePassed, audit_experiment, audit_resourceType, metadata_ownerId, metadata_ownerType, metadata_createdAt, metadata_authorId, metadata_applicationId, metadata_numCompanions, metadata_numPhotos, metadata_numPolls, metadata_numSymbols, metadata_numTokens, metadata_numVideos, metadata_platform, metadata_totalVideoLength, metadata_options, relationsMask, userOwnerCounters_USER_FEED_REMOVE, userOwnerCounters_USER_PROFILE_VIEW, userOwnerCounters_VOTE_POLL, userOwnerCounters_USER_SEND_MESSAGE, userOwnerCounters_USER_DELETE_MESSAGE, userOwnerCounters_USER_INTERNAL_LIKE, userOwnerCounters_USER_INTERNAL_UNLIKE, userOwnerCounter..."
      }
     ]
    },
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717499670_2086274387",
-   "id": "paragraph_1620717499670_2086274387",
-   "dateCreated": "2021-05-11T10:18:19+0300",
-   "dateStarted": "2021-05-11T10:18:19+0300",
-   "dateFinished": "2021-05-11T10:18:19+0300",
+   "jobName": "paragraph_1620758468259_1016650884",
+   "id": "paragraph_1620758468259_1016650884",
+   "dateCreated": "2021-05-11T21:41:08+0300",
+   "dateStarted": "2021-05-11T21:41:08+0300",
+   "dateFinished": "2021-05-11T21:41:08+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\ndf.show(10)",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:19+0300",
+   "dateUpdated": "2021-05-11T21:41:08+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -160,24 +160,24 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=2"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=556"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717499949_761524319",
-   "id": "paragraph_1620717499949_761524319",
-   "dateCreated": "2021-05-11T10:18:19+0300",
-   "dateStarted": "2021-05-11T10:18:19+0300",
-   "dateFinished": "2021-05-11T10:18:24+0300",
+   "jobName": "paragraph_1620758468767_1344641881",
+   "id": "paragraph_1620758468767_1344641881",
+   "dateCreated": "2021-05-11T21:41:08+0300",
+   "dateStarted": "2021-05-11T21:41:08+0300",
+   "dateFinished": "2021-05-11T21:41:09+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\n\ndf.createOrReplaceTempView(\"df\")\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:24+0300",
+   "dateUpdated": "2021-05-11T21:41:09+0300",
    "progress": 0.0,
    "config": {
     "editorSetting": {
@@ -211,17 +211,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717504467_2099472465",
-   "id": "paragraph_1620717504467_2099472465",
-   "dateCreated": "2021-05-11T10:18:24+0300",
-   "dateStarted": "2021-05-11T10:18:24+0300",
-   "dateFinished": "2021-05-11T10:18:24+0300",
+   "jobName": "paragraph_1620758469933_1292070753",
+   "id": "paragraph_1620758469933_1292070753",
+   "dateCreated": "2021-05-11T21:41:09+0300",
+   "dateStarted": "2021-05-11T21:41:09+0300",
+   "dateFinished": "2021-05-11T21:41:10+0300",
    "status": "FINISHED"
   },
   {
    "text": "%md\n### Проверим на уникальность композитный ключ из колонок instanceId_userId, instanceId_objectId, date",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:25+0300",
+   "dateUpdated": "2021-05-11T21:41:10+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -249,18 +249,18 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717505007_323164758",
-   "id": "paragraph_1620717505007_323164758",
-   "dateCreated": "2021-05-11T10:18:25+0300",
-   "dateStarted": "2021-05-11T10:18:25+0300",
-   "dateFinished": "2021-05-11T10:18:25+0300",
+   "jobName": "paragraph_1620758470436_2054446397",
+   "id": "paragraph_1620758470436_2054446397",
+   "dateCreated": "2021-05-11T21:41:10+0300",
+   "dateStarted": "2021-05-11T21:41:10+0300",
+   "dateFinished": "2021-05-11T21:41:10+0300",
    "status": "FINISHED"
   },
   {
    "text": "%sql\nselect instanceId_userId, instanceId_objectId, `date`, count(*)\nfrom df\ngroup by instanceId_userId, instanceId_objectId, `date`\nhaving count(*) > 1\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:25+0300",
-   "progress": 55.0,
+   "dateUpdated": "2021-05-11T21:41:10+0300",
+   "progress": 28.0,
    "config": {},
    "settings": {
     "params": {},
@@ -284,36 +284,36 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=3"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=557"
       },
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=4"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=558"
       },
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=5"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=559"
       },
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=6"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=560"
       },
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=7"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=561"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717505156_2139843149",
-   "id": "paragraph_1620717505156_2139843149",
-   "dateCreated": "2021-05-11T10:18:25+0300",
-   "dateStarted": "2021-05-11T10:18:25+0300",
-   "dateFinished": "2021-05-11T10:18:37+0300",
+   "jobName": "paragraph_1620758470582_752740729",
+   "id": "paragraph_1620758470582_752740729",
+   "dateCreated": "2021-05-11T21:41:10+0300",
+   "dateStarted": "2021-05-11T21:41:10+0300",
+   "dateFinished": "2021-05-11T21:41:19+0300",
    "status": "FINISHED"
   },
   {
    "text": "%md \n#### Легче добавить каждой колонке UUID\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:38+0300",
+   "dateUpdated": "2021-05-11T21:41:19+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -332,17 +332,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717518089_305467779",
-   "id": "paragraph_1620717518089_305467779",
-   "dateCreated": "2021-05-11T10:18:38+0300",
-   "dateStarted": "2021-05-11T10:18:38+0300",
-   "dateFinished": "2021-05-11T10:18:38+0300",
+   "jobName": "paragraph_1620758479251_485952675",
+   "id": "paragraph_1620758479251_485952675",
+   "dateCreated": "2021-05-11T21:41:19+0300",
+   "dateStarted": "2021-05-11T21:41:19+0300",
+   "dateFinished": "2021-05-11T21:41:19+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\n\nval uuid = udf(() => java.util.UUID.randomUUID().toString)\ndf = df.withColumn(\"id\", uuid())",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:38+0300",
+   "dateUpdated": "2021-05-11T21:41:19+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -361,18 +361,18 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717518183_1524462764",
-   "id": "paragraph_1620717518183_1524462764",
-   "dateCreated": "2021-05-11T10:18:38+0300",
-   "dateStarted": "2021-05-11T10:18:38+0300",
-   "dateFinished": "2021-05-11T10:18:39+0300",
+   "jobName": "paragraph_1620758479376_1459835313",
+   "id": "paragraph_1620758479376_1459835313",
+   "dateCreated": "2021-05-11T21:41:19+0300",
+   "dateStarted": "2021-05-11T21:41:19+0300",
+   "dateFinished": "2021-05-11T21:41:20+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\ndf.count()",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:40+0300",
-   "progress": 20.0,
+   "dateUpdated": "2021-05-11T21:41:20+0300",
+   "progress": 51.0,
    "config": {},
    "settings": {
     "params": {},
@@ -383,7 +383,7 @@
     "msg": [
      {
       "type": "TEXT",
-      "data": "\u001b[1m\u001b[34mres4\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 18286575\n"
+      "data": "\u001b[1m\u001b[34mres137\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 18286575\n"
      }
     ]
    },
@@ -396,24 +396,24 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=8"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=562"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717520009_1879557232",
-   "id": "paragraph_1620717520009_1879557232",
-   "dateCreated": "2021-05-11T10:18:40+0300",
-   "dateStarted": "2021-05-11T10:18:40+0300",
-   "dateFinished": "2021-05-11T10:18:41+0300",
+   "jobName": "paragraph_1620758480068_1048456432",
+   "id": "paragraph_1620758480068_1048456432",
+   "dateCreated": "2021-05-11T21:41:20+0300",
+   "dateStarted": "2021-05-11T21:41:20+0300",
+   "dateFinished": "2021-05-11T21:41:21+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\nval likedUdf = udf((any: Any) => if (any.toString.contains(\"Liked\")) 1 else 0)\ndf = df.withColumn(\"liked\", likedUdf(col(\"feedback\")))",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:41+0300",
+   "dateUpdated": "2021-05-11T21:41:21+0300",
    "progress": 0.0,
    "config": {
     "results": [
@@ -449,17 +449,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717521647_130306937",
-   "id": "paragraph_1620717521647_130306937",
-   "dateCreated": "2021-05-11T10:18:41+0300",
-   "dateStarted": "2021-05-11T10:18:41+0300",
-   "dateFinished": "2021-05-11T10:18:42+0300",
+   "jobName": "paragraph_1620758481323_1249805986",
+   "id": "paragraph_1620758481323_1249805986",
+   "dateCreated": "2021-05-11T21:41:21+0300",
+   "dateStarted": "2021-05-11T21:41:21+0300",
+   "dateFinished": "2021-05-11T21:41:21+0300",
    "status": "FINISHED"
   },
   {
    "text": "%md\n#### Посчитаем самые популярные группы по показам в лентах",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:42+0300",
+   "dateUpdated": "2021-05-11T21:41:22+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -478,18 +478,18 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717522243_1866400065",
-   "id": "paragraph_1620717522243_1866400065",
-   "dateCreated": "2021-05-11T10:18:42+0300",
-   "dateStarted": "2021-05-11T10:18:42+0300",
-   "dateFinished": "2021-05-11T10:18:42+0300",
+   "jobName": "paragraph_1620758482037_940455670",
+   "id": "paragraph_1620758482037_940455670",
+   "dateCreated": "2021-05-11T21:41:22+0300",
+   "dateStarted": "2021-05-11T21:41:22+0300",
+   "dateFinished": "2021-05-11T21:41:22+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\ndf.select($\"metadata_ownerId\", $\"id\")\n        .groupBy($\"metadata_ownerId\")\n        .count()\n        .orderBy(desc(\"count\"))\n        .show(10)",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:22:46+0300",
-   "progress": 62.0,
+   "dateUpdated": "2021-05-11T21:41:22+0300",
+   "progress": 23.0,
    "config": {
     "results": [
      {}
@@ -545,24 +545,24 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=14"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=563"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717766257_446737782",
-   "id": "paragraph_1620717766257_446737782",
-   "dateCreated": "2021-05-11T10:22:46+0300",
-   "dateStarted": "2021-05-11T10:22:46+0300",
-   "dateFinished": "2021-05-11T10:22:49+0300",
+   "jobName": "paragraph_1620758482162_152418728",
+   "id": "paragraph_1620758482162_152418728",
+   "dateCreated": "2021-05-11T21:41:22+0300",
+   "dateStarted": "2021-05-11T21:41:22+0300",
+   "dateFinished": "2021-05-11T21:41:25+0300",
    "status": "FINISHED"
   },
   {
    "text": "%md\n#### Теперь посчитаем самые популярные группы по лайкам",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:18:46+0300",
+   "dateUpdated": "2021-05-11T21:41:25+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -581,18 +581,18 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717526550_1454373197",
-   "id": "paragraph_1620717526550_1454373197",
-   "dateCreated": "2021-05-11T10:18:46+0300",
-   "dateStarted": "2021-05-11T10:18:46+0300",
-   "dateFinished": "2021-05-11T10:18:46+0300",
+   "jobName": "paragraph_1620758485320_835068616",
+   "id": "paragraph_1620758485320_835068616",
+   "dateCreated": "2021-05-11T21:41:25+0300",
+   "dateStarted": "2021-05-11T21:41:25+0300",
+   "dateFinished": "2021-05-11T21:41:25+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\ndf.select($\"metadata_ownerId\", $\"id\", $\"liked\")\n        .where($\"liked\" === 1)\n        .groupBy($\"metadata_ownerId\")\n        .count()\n        .orderBy(desc(\"count\"))\n        .show(10)\n\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:23:16+0300",
-   "progress": 31.0,
+   "dateUpdated": "2021-05-11T21:41:25+0300",
+   "progress": 10.0,
    "config": {
     "results": [
      {}
@@ -648,24 +648,24 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=15"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=564"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620717796924_230975427",
-   "id": "paragraph_1620717796924_230975427",
-   "dateCreated": "2021-05-11T10:23:16+0300",
-   "dateStarted": "2021-05-11T10:23:16+0300",
-   "dateFinished": "2021-05-11T10:23:24+0300",
+   "jobName": "paragraph_1620758485457_1890565721",
+   "id": "paragraph_1620758485457_1890565721",
+   "dateCreated": "2021-05-11T21:41:25+0300",
+   "dateStarted": "2021-05-11T21:41:25+0300",
+   "dateFinished": "2021-05-11T21:41:34+0300",
    "status": "FINISHED"
   },
   {
    "text": "%md\n#### Графики в корне проекта /plots/topGroups.png и /plots/topGroupsLiked.png",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:31:55+0300",
+   "dateUpdated": "2021-05-11T21:41:34+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -684,17 +684,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620718315364_744448948",
-   "id": "paragraph_1620718315364_744448948",
-   "dateCreated": "2021-05-11T10:31:55+0300",
-   "dateStarted": "2021-05-11T10:31:55+0300",
-   "dateFinished": "2021-05-11T10:31:55+0300",
+   "jobName": "paragraph_1620758494590_567551889",
+   "id": "paragraph_1620758494590_567551889",
+   "dateCreated": "2021-05-11T21:41:34+0300",
+   "dateStarted": "2021-05-11T21:41:34+0300",
+   "dateFinished": "2021-05-11T21:41:34+0300",
    "status": "FINISHED"
   },
   {
    "text": "%md\n#### В обоих случаях один и тот же лидер и Top 10 довольно похож",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:31:52+0300",
+   "dateUpdated": "2021-05-11T21:41:34+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -713,17 +713,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620718312647_10642890",
-   "id": "paragraph_1620718312647_10642890",
-   "dateCreated": "2021-05-11T10:31:52+0300",
-   "dateStarted": "2021-05-11T10:31:52+0300",
-   "dateFinished": "2021-05-11T10:31:52+0300",
+   "jobName": "paragraph_1620758494729_75428755",
+   "id": "paragraph_1620758494729_75428755",
+   "dateCreated": "2021-05-11T21:41:34+0300",
+   "dateStarted": "2021-05-11T21:41:34+0300",
+   "dateFinished": "2021-05-11T21:41:34+0300",
    "status": "FINISHED"
   },
   {
    "text": "%md\n#### Посмотрим на дневные колебания просмотров",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T10:52:31+0300",
+   "dateUpdated": "2021-05-11T21:41:34+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -742,18 +742,18 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620719551226_1027200153",
-   "id": "paragraph_1620719551226_1027200153",
-   "dateCreated": "2021-05-11T10:52:31+0300",
-   "dateStarted": "2021-05-11T10:52:31+0300",
-   "dateFinished": "2021-05-11T10:52:31+0300",
+   "jobName": "paragraph_1620758494868_717327220",
+   "id": "paragraph_1620758494868_717327220",
+   "dateCreated": "2021-05-11T21:41:34+0300",
+   "dateStarted": "2021-05-11T21:41:34+0300",
+   "dateFinished": "2021-05-11T21:41:34+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\ndf.select($\"metadata_ownerId\", $\"id\", $\"liked\", from_unixtime($\"audit_timestamp\" / 1000) as \"dt\")\n        .groupBy(hour($\"dt\") as \"hour\")\n        .count()\n        .orderBy(asc(\"hour\"))\n        .show(24)\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T11:06:38+0300",
-   "progress": 46.0,
+   "dateUpdated": "2021-05-11T21:41:35+0300",
+   "progress": 10.0,
    "config": {
     "results": [
      {}
@@ -812,24 +812,24 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=22"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=565"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620720398785_310728188",
-   "id": "paragraph_1620720398785_310728188",
-   "dateCreated": "2021-05-11T11:06:38+0300",
-   "dateStarted": "2021-05-11T11:06:38+0300",
-   "dateFinished": "2021-05-11T11:06:51+0300",
+   "jobName": "paragraph_1620758494996_898570900",
+   "id": "paragraph_1620758494996_898570900",
+   "dateCreated": "2021-05-11T21:41:34+0300",
+   "dateStarted": "2021-05-11T21:41:35+0300",
+   "dateFinished": "2021-05-11T21:41:49+0300",
    "status": "FINISHED"
   },
   {
    "text": "%md\n#### Как и ожидалось: топ приходится на 18-21, а наименьшие значения с 0 до 5\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T11:08:50+0300",
+   "dateUpdated": "2021-05-11T21:41:49+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -848,17 +848,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620720530333_363629462",
-   "id": "paragraph_1620720530333_363629462",
-   "dateCreated": "2021-05-11T11:08:50+0300",
-   "dateStarted": "2021-05-11T11:08:50+0300",
-   "dateFinished": "2021-05-11T11:08:50+0300",
+   "jobName": "paragraph_1620758509123_1737518311",
+   "id": "paragraph_1620758509123_1737518311",
+   "dateCreated": "2021-05-11T21:41:49+0300",
+   "dateStarted": "2021-05-11T21:41:49+0300",
+   "dateFinished": "2021-05-11T21:41:49+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\n\ndf.printSchema()\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T19:00:04+0300",
+   "dateUpdated": "2021-05-11T21:41:49+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -877,17 +877,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620748804479_635517551",
-   "id": "paragraph_1620748804479_635517551",
-   "dateCreated": "2021-05-11T19:00:04+0300",
-   "dateStarted": "2021-05-11T19:00:04+0300",
-   "dateFinished": "2021-05-11T19:00:04+0300",
+   "jobName": "paragraph_1620758509249_271945742",
+   "id": "paragraph_1620758509249_271945742",
+   "dateCreated": "2021-05-11T21:41:49+0300",
+   "dateStarted": "2021-05-11T21:41:49+0300",
+   "dateFinished": "2021-05-11T21:41:49+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\nvar notNaDf = df.na.fill(0).na.fill(\"\")\nnotNaDf.printSchema()",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T19:19:01+0300",
+   "dateUpdated": "2021-05-11T21:41:49+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -906,18 +906,18 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620749941094_2128624948",
-   "id": "paragraph_1620749941094_2128624948",
-   "dateCreated": "2021-05-11T19:19:01+0300",
-   "dateStarted": "2021-05-11T19:19:01+0300",
-   "dateFinished": "2021-05-11T19:19:01+0300",
+   "jobName": "paragraph_1620758509825_773697598",
+   "id": "paragraph_1620758509825_773697598",
+   "dateCreated": "2021-05-11T21:41:49+0300",
+   "dateStarted": "2021-05-11T21:41:49+0300",
+   "dateFinished": "2021-05-11T21:41:50+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\nnotNaDf.count()",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T19:19:08+0300",
-   "progress": 55.0,
+   "dateUpdated": "2021-05-11T21:41:50+0300",
+   "progress": 82.0,
    "config": {},
    "settings": {
     "params": {},
@@ -928,7 +928,7 @@
     "msg": [
      {
       "type": "TEXT",
-      "data": "\u001b[1m\u001b[34mres36\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 18286575\n"
+      "data": "\u001b[1m\u001b[34mres143\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 18286575\n"
      }
     ]
    },
@@ -941,25 +941,25 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=28"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=566"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620749948702_1611515034",
-   "id": "paragraph_1620749948702_1611515034",
-   "dateCreated": "2021-05-11T19:19:08+0300",
-   "dateStarted": "2021-05-11T19:19:08+0300",
-   "dateFinished": "2021-05-11T19:19:09+0300",
+   "jobName": "paragraph_1620758510704_559184178",
+   "id": "paragraph_1620758510704_559184178",
+   "dateCreated": "2021-05-11T21:41:50+0300",
+   "dateStarted": "2021-05-11T21:41:50+0300",
+   "dateFinished": "2021-05-11T21:41:51+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\nnotNaDf.na.drop().count()",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T19:04:03+0300",
-   "progress": 89.0,
+   "dateUpdated": "2021-05-11T21:41:51+0300",
+   "progress": 93.0,
    "config": {},
    "settings": {
     "params": {},
@@ -970,7 +970,7 @@
     "msg": [
      {
       "type": "TEXT",
-      "data": "\u001b[1m\u001b[34mres33\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 18286575\n"
+      "data": "\u001b[1m\u001b[34mres144\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 18286575\n"
      }
     ]
    },
@@ -983,24 +983,24 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=27"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=567"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620749043341_1195298326",
-   "id": "paragraph_1620749043341_1195298326",
-   "dateCreated": "2021-05-11T19:04:03+0300",
-   "dateStarted": "2021-05-11T19:04:03+0300",
-   "dateFinished": "2021-05-11T19:06:50+0300",
+   "jobName": "paragraph_1620758511906_422674763",
+   "id": "paragraph_1620758511906_422674763",
+   "dateCreated": "2021-05-11T21:41:51+0300",
+   "dateStarted": "2021-05-11T21:41:51+0300",
+   "dateFinished": "2021-05-11T21:44:33+0300",
    "status": "FINISHED"
   },
   {
    "text": "%md\n#### Пустые значения заполнили, посчитаем корреляцию признаков ",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T19:08:31+0300",
+   "dateUpdated": "2021-05-11T21:44:33+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -1019,17 +1019,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620749311806_263648776",
-   "id": "paragraph_1620749311806_263648776",
-   "dateCreated": "2021-05-11T19:08:31+0300",
-   "dateStarted": "2021-05-11T19:08:31+0300",
-   "dateFinished": "2021-05-11T19:08:31+0300",
+   "jobName": "paragraph_1620758673696_1872127079",
+   "id": "paragraph_1620758673696_1872127079",
+   "dateCreated": "2021-05-11T21:44:33+0300",
+   "dateStarted": "2021-05-11T21:44:33+0300",
+   "dateFinished": "2021-05-11T21:44:33+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\nnotNaDf.columns.foreach(column => {\n    val tmpCol = column + \"tmp\"\n    if (List(\"IntegerType\", \"LongType\").contains(notNaDf.dtypes.toMap.apply(column))) {\n        notNaDf = notNaDf.withColumn(tmpCol, col(column).cast(\"double\"))\n                .drop(column)\n                .withColumnRenamed(tmpCol, column)\n    }\n})",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T19:21:26+0300",
+   "dateUpdated": "2021-05-11T21:44:33+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -1043,17 +1043,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620750086447_1108988474",
-   "id": "paragraph_1620750086447_1108988474",
-   "dateCreated": "2021-05-11T19:21:26+0300",
-   "dateStarted": "2021-05-11T19:21:26+0300",
-   "dateFinished": "2021-05-11T19:21:29+0300",
+   "jobName": "paragraph_1620758673880_785926912",
+   "id": "paragraph_1620758673880_785926912",
+   "dateCreated": "2021-05-11T21:44:33+0300",
+   "dateStarted": "2021-05-11T21:44:33+0300",
+   "dateFinished": "2021-05-11T21:44:37+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\nnotNaDf.printSchema()",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T19:21:31+0300",
+   "dateUpdated": "2021-05-11T21:44:37+0300",
    "progress": 0.0,
    "config": {},
    "settings": {
@@ -1072,17 +1072,17 @@
    "apps": [],
    "runtimeInfos": {},
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620750091149_571776762",
-   "id": "paragraph_1620750091149_571776762",
-   "dateCreated": "2021-05-11T19:21:31+0300",
-   "dateStarted": "2021-05-11T19:21:31+0300",
-   "dateFinished": "2021-05-11T19:21:31+0300",
+   "jobName": "paragraph_1620758677198_1173006502",
+   "id": "paragraph_1620758677198_1173006502",
+   "dateCreated": "2021-05-11T21:44:37+0300",
+   "dateStarted": "2021-05-11T21:44:37+0300",
+   "dateFinished": "2021-05-11T21:44:37+0300",
    "status": "FINISHED"
   },
   {
    "text": "%spark\nimport org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.SparseVector\nimport org.apache.spark.mllib.stat.Statistics\nimport spark.implicits._\nimport org.apache.spark.mllib.linalg.{Vector, Vectors}\n\nval notStrCols = notNaDf.columns.filter(column => \"DoubleType\" == notNaDf.dtypes.toMap.apply(column))\nval corr = Statistics.corr(new VectorAssembler()\n        .setInputCols(notStrCols)\n        .setOutputCol(\"corr\")\n        .transform(notNaDf)\n        .select(\"corr\")\n        .rdd\n        .map(vec => Vectors.fromML(vec.getAs[SparseVector](\"corr\").toDense)))\n\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T20:23:26+0300",
+   "dateUpdated": "2021-05-11T21:44:37+0300",
    "progress": 100.0,
    "config": {},
    "settings": {
@@ -1107,30 +1107,30 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=544"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=568"
       },
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=545"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=569"
       },
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=546"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=570"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620753806226_58630610",
-   "id": "paragraph_1620753806226_58630610",
-   "dateCreated": "2021-05-11T20:23:26+0300",
-   "dateStarted": "2021-05-11T20:23:26+0300",
-   "dateFinished": "2021-05-11T20:30:16+0300",
+   "jobName": "paragraph_1620758677675_1025353398",
+   "id": "paragraph_1620758677675_1025353398",
+   "dateCreated": "2021-05-11T21:44:37+0300",
+   "dateStarted": "2021-05-11T21:44:37+0300",
+   "dateFinished": "2021-05-11T21:51:58+0300",
    "status": "FINISHED"
   },
   {
-   "text": "%spark\nimport org.apache.spark.sql.SparkSession\nimport org.apache.spark.sql.types.StructType\n\nval likedIdx = notStrCols.zipWithIndex.find(_._1 == \"liked\").get._2\ncorr.rowIter.toList(likedIdx).toArray.toSeq\n        .zip(notStrCols)\n        .toDF()\n        .na.fill(0)\n        .select(abs($\"_1\") as \"corr\", $\"_2\" as \"colName\")\n        .orderBy(asc(\"corr\"))\n        .show()\n\n",
+   "text": "%spark\n\nval likedIdx = notStrCols.zipWithIndex.find(_._1 == \"liked\").get._2\ncorr.rowIter.toList(likedIdx).toArray.toSeq\n        .zip(notStrCols.map(str => str.replace(\"auditweights\", \"aw\").replace(\"userOwnerCounters\", \"UOC\").replace(\"audit\", \"a\")))\n        .toDF()\n        .na.fill(0)\n        .select($\"_1\" as \"corr\", $\"_2\" as \"colName\")\n        .orderBy(desc(\"corr\"))\n        .show(25)\n\n",
    "user": "anonymous",
-   "dateUpdated": "2021-05-11T21:31:49+0300",
+   "dateUpdated": "2021-05-11T22:04:44+0300",
    "progress": 0.0,
    "config": {
     "results": [
@@ -1170,7 +1170,7 @@
     "msg": [
      {
       "type": "TEXT",
-      "data": "+----+--------------------+\n|corr|             colName|\n+----+--------------------+\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0|userOwnerCounters...|\n| 0.0| owner_change_datime|\n| 0.0|userOwnerCounters...|\n| 0.0|     owner_is_abused|\n| 0.0|userOwnerCounters...|\n| 0.0|owner_is_semiacti...|\n| 0.0|userOwnerCounters...|\n| 0.0|  owner_is_activated|\n| 0.0|userOwnerCounters...|\n| 0.0|        owner_region|\n+----+--------------------+\nonly showing top 20 rows\n\nimport org.apache.spark.sql.SparkSession\nimport org.apache.spark.sql.types.StructType\n\u001b[1m\u001b[34mlikedIdx\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 160\n"
+      "data": "+--------------------+--------------------+\n|                corr|             colName|\n+--------------------+--------------------+\n|                 1.0|               liked|\n|  0.1454865692388769|         aw_ctr_high|\n| 0.09307435148866633|aw_userOwner_CREA...|\n|  0.0893591324748627|         aw_isRandom|\n| 0.08727070887180428|    aw_svd_prelaunch|\n| 0.08114650487156005|   metadata_numPolls|\n| 0.08072226903427523|     UOC_CREATE_LIKE|\n| 0.07708519000155459|        aw_svd_spark|\n|0.045568146188591625|      a_resourceType|\n|  0.0441181516208078|        aw_feedStats|\n| 0.03876479710067663|            objectId|\n| 0.03876479710067663| instanceId_objectId|\n| 0.03703759987432455|    user_create_date|\n| 0.03274357484307442|aw_likersFeedStat...|\n|  0.0319722878456401|   instanceId_userId|\n| 0.02956278895862207|            aw_ageMs|\n|0.029466152001013136|aw_likersSvd_prel...|\n|0.027086832377158046|aw_likersSvd_spar...|\n|0.026901957342053973|     user_birth_date|\n|0.026227222046508944|aw_friendLikes_ac...|\n|0.025632801923254143|      aw_friendLikes|\n|0.019294708491130116|           aw_matrix|\n|  0.0166412254540936|         aw_numLikes|\n|0.014111314988894619|  user_change_datime|\n|0.013533036575532587|        a_timePassed|\n+--------------------+--------------------+\nonly showing top 25 rows\n\nimport org.apache.spark.sql.SparkSession\nimport org.apache.spark.sql.types.StructType\n\u001b[1m\u001b[34mlikedIdx\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 160\n"
      }
     ]
    },
@@ -1183,18 +1183,18 @@
      "group": "spark",
      "values": [
       {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=550"
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=584"
       }
      ],
      "interpreterSettingId": "spark"
     }
    },
    "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620757909909_1094605068",
-   "id": "paragraph_1620757909909_1094605068",
-   "dateCreated": "2021-05-11T21:31:49+0300",
-   "dateStarted": "2021-05-11T21:31:49+0300",
-   "dateFinished": "2021-05-11T21:31:50+0300",
+   "jobName": "paragraph_1620759884349_1947863478",
+   "id": "paragraph_1620759884349_1947863478",
+   "dateCreated": "2021-05-11T22:04:44+0300",
+   "dateStarted": "2021-05-11T22:04:44+0300",
+   "dateFinished": "2021-05-11T22:04:45+0300",
    "status": "FINISHED"
   }
  ],
