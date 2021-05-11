@@ -5,10 +5,11 @@ import breeze.linalg.{Axis, DenseMatrix, DenseVector}
 import scala.io.Source
 import scala.util.Random
 
+
 class DataFrame(var columns: DenseVector[String],
                 var values: DenseMatrix[Double],
-                var columnMap: Map[String, Int] = null
-               ) {
+                var columnMap: Map[String, Int] = null) {
+
   def drop(column: String, inplace: Boolean = false): DenseMatrix[Double] = {
     val toDropCol = columnMap.getOrElse(column, -1)
     if (toDropCol == -1) {
@@ -18,7 +19,8 @@ class DataFrame(var columns: DenseVector[String],
     if (inplace) {
       values = filtered
     }
-    columnMap = columnMap.removed(column)
+
+    columnMap =  columnMap.filter(_._1 != column)
     columns = DenseVector(columns.data.filter(_ != column))
     filtered
   }

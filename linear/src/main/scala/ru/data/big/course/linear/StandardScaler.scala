@@ -1,6 +1,6 @@
 package ru.data.big.course.linear
 
-import breeze.linalg.{*, DenseMatrix, scale}
+import breeze.linalg.{*, DenseMatrix}
 import breeze.stats.{mean, stddev}
 
 import scala.collection.immutable.HashMap

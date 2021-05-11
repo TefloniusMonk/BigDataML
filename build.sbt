@@ -4,17 +4,47 @@ version := "0.1"
 
 scalaVersion := "2.13.5"
 
-libraryDependencies  ++= Seq(
-  "org.scalanlp" %% "breeze" % "1.1",
+lazy val global = project
+  .in(file("."))
+  .aggregate(
+    linear,
+    spark
+  )
 
-  // Native libraries are not included by default. add this if you want them
-  // Native libraries greatly improve performance, but increase jar sizes.
-  // It also packages various blas implementations, which have licenses that may or may not
-  // be compatible with the Apache License. No GPL code, as best I know.
-  "org.scalanlp" %% "breeze-natives" % "1.1",
+lazy val linear = project
+  .settings(
+    name := "linear",
+    libraryDependencies ++= commonDependencies
+  )
 
-  // The visualization library is distributed separately as well.
-  // It depends on LGPL code
-  "org.scalanlp" %% "breeze-viz" % "1.1",
-"org.scalatest" %% "scalatest" % "3.0.8" % Test
+lazy val spark = project
+  .settings(
+    name := "spark",
+    libraryDependencies ++= commonDependencies
+  )
+
+lazy val dependencies = new {
+  val breezeV = "1.1"
+  val breezeNativesV = "1.1"
+  val breezeVizV = "1.1"
+  val scalaTestV = "3.0.8"
+  val sparkV = "3.1.1"
+
+  val breeze = "org.scalanlp" %% "breeze" % breezeV
+  val breezeNatives = "org.scalanlp" %% "breeze-natives" % breezeNativesV
+  val breezeViz = "org.scalanlp" %% "breeze-viz" % breezeVizV
+  val scalaTest = "org.scalatest" %% "scalatest" % scalaTestV % Test
+  val sparkCore = "org.apache.spark" %% "spark-core" % sparkV
+  val sparkMllib = "org.apache.spark" %% "spark-mllib" % sparkV
+  val sparkSql = "org.apache.spark" %% "spark-sql" % sparkV
+}
+
+lazy val commonDependencies = Seq(
+  dependencies.breeze,
+  dependencies.breezeNatives,
+  dependencies.breezeViz,
+  dependencies.scalaTest,
+  dependencies.sparkCore,
+  dependencies.sparkMllib,
+  dependencies.sparkSql,
 )

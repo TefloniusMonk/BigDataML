@@ -1,7 +1,7 @@
 package ru.data.big.course.linear
 
-import breeze.linalg._
-import breeze.math.PowImplicits.DoublePow
+import breeze.linalg.{DenseMatrix, DenseVector, sum}
+import breeze.math.PowImplicits.IntPow
 import breeze.numerics.abs
 
 import scala.collection.mutable.ListBuffer

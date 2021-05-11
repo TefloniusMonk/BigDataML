@@ -1,6 +1,6 @@
 package ru.data.big.course.linear
 
-import breeze.linalg.{DenseMatrix, DenseVector, sum}
+import breeze.linalg.{DenseVector, sum}
 import breeze.numerics.{abs, pow, sqrt}
 
 object Metric {

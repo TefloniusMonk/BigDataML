@@ -1,0 +1,1174 @@
+﻿{
+ "paragraphs": [
+  {
+   "text": "%md\n### В данном ноутбуке будет рассматриваться датасет SNA Hackathon - Коллаборативная система \n#####  Описание: \n* instanceId_userId — идентификатор пользователя (анонимизированный)\n* instanceId_objectType — тип объекта\n* instanceId_objectId — идентификатор объекта (анонимизированный)\n* feedback — массив с типами реакций пользователя (наличие в массиве токена Liked говорит о том, что объект получил «класс» от пользователя)\n* audit_clientType — тип платформы, с которой зашёл пользователь\n* audit_timestamp — время, когда строилась лента\n* metadata_ownerId — автор показанного объекта (анонимизированный)\n* metadata_createdAt — дата создания показанного объекта\n* audit_* — расширенная информация о контексте построения ленты;\n* metadata_* — расширенная информация о самом объекте;\n* userOwnerCounters_* — информация о предыдущих взаимодействиях пользователя и автора контента;\n* ownerUserCounters_* — информация о предыдущих взаимодействиях автора контента и пользователя;\n* membership_* — информация о членстве пользователя в группе, где опубликован контент;\n* user_* — подробная информация о пользователе;\n* auditweights_* — большое количество runtime-признаков, извлечённых текущей системой.",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:04+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h3>В данном ноутбуке будет рассматриваться датасет SNA Hackathon - Коллаборативная система</h3>\n<h5>Описание:</h5>\n<ul>\n<li>instanceId_userId — идентификатор пользователя (анонимизированный)</li>\n<li>instanceId_objectType — тип объекта</li>\n<li>instanceId_objectId — идентификатор объекта (анонимизированный)</li>\n<li>feedback — массив с типами реакций пользователя (наличие в массиве токена Liked говорит о том, что объект получил «класс» от пользователя)</li>\n<li>audit_clientType — тип платформы, с которой зашёл пользователь</li>\n<li>audit_timestamp — время, когда строилась лента</li>\n<li>metadata_ownerId — автор показанного объекта (анонимизированный)</li>\n<li>metadata_createdAt — дата создания показанного объекта</li>\n<li>audit_* — расширенная информация о контексте построения ленты;</li>\n<li>metadata_* — расширенная информация о самом объекте;</li>\n<li>userOwnerCounters_* — информация о предыдущих взаимодействиях пользователя и автора контента;</li>\n<li>ownerUserCounters_* — информация о предыдущих взаимодействиях автора контента и пользователя;</li>\n<li>membership_* — информация о членстве пользователя в группе, где опубликован контент;</li>\n<li>user_* — подробная информация о пользователе;</li>\n<li>auditweights_* — большое количество runtime-признаков, извлечённых текущей системой.</li>\n</ul>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717484659_536835475",
+   "id": "paragraph_1620717484659_536835475",
+   "dateCreated": "2021-05-11T10:18:04+0300",
+   "dateStarted": "2021-05-11T10:18:04+0300",
+   "dateFinished": "2021-05-11T10:18:04+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\n\nimport org.apache.spark.sql.DataFrame\n\nimport scala.collection.{immutable, mutable}\n\nvar df = spark.read.parquet(\"/home/mikhail/IdeaProjects/BigDataML/data/SNAHackathon2019/collabTrain/\")\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:04+0300",
+   "progress": 0.0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {},
+    "enabled": true
+   },
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "import org.apache.spark.sql.DataFrame\nimport scala.collection.{immutable, mutable}\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [instanceId_userId: int, instanceId_objectType: string ... 167 more fields]\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=0"
+      },
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=1"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717484816_1604189519",
+   "id": "paragraph_1620717484816_1604189519",
+   "dateCreated": "2021-05-11T10:18:04+0300",
+   "dateStarted": "2021-05-11T10:18:04+0300",
+   "dateFinished": "2021-05-11T10:18:19+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\n\ndf.columns\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:19+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "size": {
+        "height": 146.0
+       },
+       "state": {}
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32mArray[String]\u001b[0m = Array(instanceId_userId, instanceId_objectType, instanceId_objectId, audit_pos, audit_clientType, audit_timestamp, audit_timePassed, audit_experiment, audit_resourceType, metadata_ownerId, metadata_ownerType, metadata_createdAt, metadata_authorId, metadata_applicationId, metadata_numCompanions, metadata_numPhotos, metadata_numPolls, metadata_numSymbols, metadata_numTokens, metadata_numVideos, metadata_platform, metadata_totalVideoLength, metadata_options, relationsMask, userOwnerCounters_USER_FEED_REMOVE, userOwnerCounters_USER_PROFILE_VIEW, userOwnerCounters_VOTE_POLL, userOwnerCounters_USER_SEND_MESSAGE, userOwnerCounters_USER_DELETE_MESSAGE, userOwnerCounters_USER_INTERNAL_LIKE, userOwnerCounters_USER_INTERNAL_UNLIKE, userOwnerCounters_..."
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717499670_2086274387",
+   "id": "paragraph_1620717499670_2086274387",
+   "dateCreated": "2021-05-11T10:18:19+0300",
+   "dateStarted": "2021-05-11T10:18:19+0300",
+   "dateFinished": "2021-05-11T10:18:19+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\ndf.show(10)",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:19+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "state": {
+        "currentPage": "Console"
+       }
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "+-----------------+---------------------+-------------------+---------+----------------+---------------+----------------+----------------+------------------+----------------+-------------------+------------------+-----------------+----------------------+----------------------+------------------+-----------------+-------------------+------------------+------------------+-----------------+-------------------------+--------------------+-------------+----------------------------------+-----------------------------------+---------------------------+-----------------------------------+-------------------------------------+------------------------------------+--------------------------------------+--------------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------------------+---------------------------------------+-------------------------------------------+-----------------------------------+----------------------------+----------------------------------------+----------------------------------+-----------------------------------+-------------------------+------------------------------+------------------------------+------------------------------+--------------------------------+-----------------------------+----------------------+-----------------------+-----------------------+----------------------------------+-----------------------------------+---------------------------+-----------------------------------+-------------------------------------+------------------------------------+--------------------------------------+--------------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------------------+---------------------------------------+-------------------------------------------+-----------------------------------+----------------------------+----------------------------------------+----------------------------------+-----------------------------------+-------------------------+------------------------------+------------------------------+------------------------------+--------------------------------+-----------------------------+----------------------+-----------------------+-----------------------+-----------------+---------------------------+-------------------+--------------------------+-----------------+----------------+------------+------------+----------------+-----------------+---------------+----------------+---------------+------------------+-------------------+----------------------+------------+----------------+---------------+-----------+-----------+---------------+----------------+--------------+---------------+--------------+-----------------+------------------+---------------------+-----------+----------------+--------+------------------+-------------------+-----------------------+---------------------+-------------------------+-------------------------+----------------------------------------+----------------------+-------------------------------+-----------------------------+------------------------+-------------------------------+----------------------------+--------------------+-------------------+---------------------+----------------------------------+--------------------------------------+-------------------+-----------------------------+------------------------+---------------------+---------------------+------------------------+--------------------+--------------------+--------------------+---------------------------+--------------------------+----------------------------+-----------------------------+--------------------------+----------------------+--------------------+-------------------------------------+-----------------------------------+----------------------------------+----------------------------+-------------------------------------------+-------------------------------------------+----------------------------------------+---------------------------------+---------------------------+------------------------------+------------------------------------------+---------------------------------------+------------------------------------------------+-----------------------------------------+-------------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+-------------------------------------------------+----------------------------+--------------------------------+------------------------------+----------------------------------+-------------------------+----------+\n|instanceId_userId|instanceId_objectType|instanceId_objectId|audit_pos|audit_clientType|audit_timestamp|audit_timePassed|audit_experiment|audit_resourceType|metadata_ownerId| metadata_ownerType|metadata_createdAt|metadata_authorId|metadata_applicationId|metadata_numCompanions|metadata_numPhotos|metadata_numPolls|metadata_numSymbols|metadata_numTokens|metadata_numVideos|metadata_platform|metadata_totalVideoLength|    metadata_options|relationsMask|userOwnerCounters_USER_FEED_REMOVE|userOwnerCounters_USER_PROFILE_VIEW|userOwnerCounters_VOTE_POLL|userOwnerCounters_USER_SEND_MESSAGE|userOwnerCounters_USER_DELETE_MESSAGE|userOwnerCounters_USER_INTERNAL_LIKE|userOwnerCounters_USER_INTERNAL_UNLIKE|userOwnerCounters_USER_STATUS_COMMENT_CREATE|userOwnerCounters_PHOTO_COMMENT_CREATE|userOwnerCounters_MOVIE_COMMENT_CREATE|userOwnerCounters_USER_PHOTO_ALBUM_COMMENT_CREATE|userOwnerCounters_COMMENT_INTERNAL_LIKE|userOwnerCounters_USER_FORUM_MESSAGE_CREATE|userOwnerCounters_PHOTO_MARK_CREATE|userOwnerCounters_PHOTO_VIEW|userOwnerCounters_PHOTO_PIN_BATCH_CREATE|userOwnerCounters_PHOTO_PIN_UPDATE|userOwnerCounters_USER_PRESENT_SEND|userOwnerCounters_UNKNOWN|userOwnerCounters_CREATE_TOPIC|userOwnerCounters_CREATE_IMAGE|userOwnerCounters_CREATE_MOVIE|userOwnerCounters_CREATE_COMMENT|userOwnerCounters_CREATE_LIKE|userOwnerCounters_TEXT|userOwnerCounters_IMAGE|userOwnerCounters_VIDEO|ownerUserCounters_USER_FEED_REMOVE|ownerUserCounters_USER_PROFILE_VIEW|ownerUserCounters_VOTE_POLL|ownerUserCounters_USER_SEND_MESSAGE|ownerUserCounters_USER_DELETE_MESSAGE|ownerUserCounters_USER_INTERNAL_LIKE|ownerUserCounters_USER_INTERNAL_UNLIKE|ownerUserCounters_USER_STATUS_COMMENT_CREATE|ownerUserCounters_PHOTO_COMMENT_CREATE|ownerUserCounters_MOVIE_COMMENT_CREATE|ownerUserCounters_USER_PHOTO_ALBUM_COMMENT_CREATE|ownerUserCounters_COMMENT_INTERNAL_LIKE|ownerUserCounters_USER_FORUM_MESSAGE_CREATE|ownerUserCounters_PHOTO_MARK_CREATE|ownerUserCounters_PHOTO_VIEW|ownerUserCounters_PHOTO_PIN_BATCH_CREATE|ownerUserCounters_PHOTO_PIN_UPDATE|ownerUserCounters_USER_PRESENT_SEND|ownerUserCounters_UNKNOWN|ownerUserCounters_CREATE_TOPIC|ownerUserCounters_CREATE_IMAGE|ownerUserCounters_CREATE_MOVIE|ownerUserCounters_CREATE_COMMENT|ownerUserCounters_CREATE_LIKE|ownerUserCounters_TEXT|ownerUserCounters_IMAGE|ownerUserCounters_VIDEO|membership_status|membership_statusUpdateDate|membership_joinDate|membership_joinRequestDate|owner_create_date|owner_birth_date|owner_gender|owner_status|owner_ID_country|owner_ID_Location|owner_is_active|owner_is_deleted|owner_is_abused|owner_is_activated|owner_change_datime|owner_is_semiactivated|owner_region|user_create_date|user_birth_date|user_gender|user_status|user_ID_country|user_ID_Location|user_is_active|user_is_deleted|user_is_abused|user_is_activated|user_change_datime|user_is_semiactivated|user_region|        feedback|objectId|auditweights_ageMs|auditweights_closed|auditweights_ctr_gender|auditweights_ctr_high|auditweights_ctr_negative|auditweights_dailyRecency|auditweights_feedOwner_RECOMMENDED_GROUP|auditweights_feedStats|auditweights_friendCommentFeeds|auditweights_friendCommenters|auditweights_friendLikes|auditweights_friendLikes_actors|auditweights_hasDetectedText|auditweights_hasText|auditweights_isPymk|auditweights_isRandom|auditweights_likersFeedStats_hyper|auditweights_likersSvd_prelaunch_hyper|auditweights_matrix|auditweights_notOriginalPhoto|auditweights_numDislikes|auditweights_numLikes|auditweights_numShows|auditweights_onlineVideo|auditweights_partAge|auditweights_partCtr|auditweights_partSvd|auditweights_processedVideo|auditweights_relationMasks|auditweights_source_LIVE_TOP|auditweights_source_MOVIE_TOP|auditweights_svd_prelaunch|auditweights_svd_spark|auditweights_userAge|auditweights_userOwner_CREATE_COMMENT|auditweights_userOwner_CREATE_IMAGE|auditweights_userOwner_CREATE_LIKE|auditweights_userOwner_IMAGE|auditweights_userOwner_MOVIE_COMMENT_CREATE|auditweights_userOwner_PHOTO_COMMENT_CREATE|auditweights_userOwner_PHOTO_MARK_CREATE|auditweights_userOwner_PHOTO_VIEW|auditweights_userOwner_TEXT|auditweights_userOwner_UNKNOWN|auditweights_userOwner_USER_DELETE_MESSAGE|auditweights_userOwner_USER_FEED_REMOVE|auditweights_userOwner_USER_FORUM_MESSAGE_CREATE|auditweights_userOwner_USER_INTERNAL_LIKE|auditweights_userOwner_USER_INTERNAL_UNLIKE|auditweights_userOwner_USER_PRESENT_SEND|auditweights_userOwner_USER_PROFILE_VIEW|auditweights_userOwner_USER_SEND_MESSAGE|auditweights_userOwner_USER_STATUS_COMMENT_CREATE|auditweights_userOwner_VIDEO|auditweights_userOwner_VOTE_POLL|auditweights_x_ActorsRelations|auditweights_likersSvd_spark_hyper|auditweights_source_PROMO|      date|\n+-----------------+---------------------+-------------------+---------+----------------+---------------+----------------+----------------+------------------+----------------+-------------------+------------------+-----------------+----------------------+----------------------+------------------+-----------------+-------------------+------------------+------------------+-----------------+-------------------------+--------------------+-------------+----------------------------------+-----------------------------------+---------------------------+-----------------------------------+-------------------------------------+------------------------------------+--------------------------------------+--------------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------------------+---------------------------------------+-------------------------------------------+-----------------------------------+----------------------------+----------------------------------------+----------------------------------+-----------------------------------+-------------------------+------------------------------+------------------------------+------------------------------+--------------------------------+-----------------------------+----------------------+-----------------------+-----------------------+----------------------------------+-----------------------------------+---------------------------+-----------------------------------+-------------------------------------+------------------------------------+--------------------------------------+--------------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------------------+---------------------------------------+-------------------------------------------+-----------------------------------+----------------------------+----------------------------------------+----------------------------------+-----------------------------------+-------------------------+------------------------------+------------------------------+------------------------------+--------------------------------+-----------------------------+----------------------+-----------------------+-----------------------+-----------------+---------------------------+-------------------+--------------------------+-----------------+----------------+------------+------------+----------------+-----------------+---------------+----------------+---------------+------------------+-------------------+----------------------+------------+----------------+---------------+-----------+-----------+---------------+----------------+--------------+---------------+--------------+-----------------+------------------+---------------------+-----------+----------------+--------+------------------+-------------------+-----------------------+---------------------+-------------------------+-------------------------+----------------------------------------+----------------------+-------------------------------+-----------------------------+------------------------+-------------------------------+----------------------------+--------------------+-------------------+---------------------+----------------------------------+--------------------------------------+-------------------+-----------------------------+------------------------+---------------------+---------------------+------------------------+--------------------+--------------------+--------------------+---------------------------+--------------------------+----------------------------+-----------------------------+--------------------------+----------------------+--------------------+-------------------------------------+-----------------------------------+----------------------------------+----------------------------+-------------------------------------------+-------------------------------------------+----------------------------------------+---------------------------------+---------------------------+------------------------------+------------------------------------------+---------------------------------------+------------------------------------------------+-----------------------------------------+-------------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+-------------------------------------------------+----------------------------+--------------------------------+------------------------------+----------------------------------+-------------------------+----------+\n|              108|                 Post|           18452434|        0|             MOB|  1520194086477|        10184811|    XPRM-5386_G1|                 8|           13680|GROUP_OPEN_OFFICIAL|     1520147725000|            73356|                     0|                     0|                 1|                0|                 18|                 2|                 0|            OTHER|                        0|[HAS_TEXT, HAS_PH...|         null|                               0.0|                                0.0|                        0.0|                                0.0|                                  0.0|                                 0.0|                                   0.0|                                         0.0|                                   0.0|                                   0.0|                                              0.0|                                    0.0|                                        0.0|                                0.0|                         0.0|                                     0.0|                               0.0|                                0.0|                      0.0|                           0.0|                           0.0|                           0.0|              5.0487775802612305|           31.726192474365234|     67.61256408691406|     21.856033325195312|      8.234378814697266|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                A|              1383386108187|      1383386100000|                      null|             null|            null|        null|        null|            null|             null|           null|            null|           null|              null|               null|                  null|        null|   1182853218900|           4142|          2|        192|    10397571399|         2773505|             1|              0|             0|                1|     1394110985237|                 null|         89|         [Liked]|18452434|       4.6361264E7|               null|           0.0098556755|          0.051606573|             0.0014042387|                0.9696286|                                    null|                   8.2|                           null|                         null|                    null|                           null|                        null|                null|               null|                  1.0|                              null|                                  null|         0.03549679|                         null|                    54.0|                392.0|              38355.0|                    null|                null|                null|                null|                       null|                      null|                        null|                         null|                      null|             0.7479802|                36.0|                            0.9963158|                               null|                               1.0|                         1.0|                                       null|                                       null|                                    null|                             null|                        1.0|                          null|                                      null|                                   null|                                            null|                                     null|                                       null|                                    null|                                    null|                                    null|                                             null|                        null|                            null|                          null|                              null|                     null|2018-03-04|\n|              231|                 Post|           31980032|        3|             MOB|  1520113126655|          132164|    XPRM-5386_G2|                 8|           42167|GROUP_OPEN_OFFICIAL|     1520097620000|           828613|                     0|                     0|                 1|                0|               1408|               223|                 0|            OTHER|                        0|[HAS_TEXT, HAS_PH...|         null|                               0.0|                                0.0|                        0.0|                                0.0|                                  0.0|                                 0.0|                                   0.0|                                         0.0|                                   0.0|                                   0.0|                                              0.0|                                    0.0|                                        0.0|                                0.0|                         0.0|                                     0.0|                               0.0|                                0.0|       2.7805256843566895|                           0.0|                           0.0|                           0.0|                             0.0|             9.55345630645752|    11.429396629333496|      2.215708017349243|                    0.0|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                A|              1513013923373|      1513013940000|                      null|             null|            null|        null|        null|            null|             null|           null|            null|           null|              null|               null|                  null|        null|   1182872563207|          -4972|          2|        192|    10414533690|         3385314|             1|              0|             0|                1|     1513558462510|                    0|         11|[Clicked, Liked]|31980032|       1.5505841E7|               null|            0.022309711|           0.11298879|              0.011811024|               0.97855395|                                    null|                   0.1|                           null|                         null|                    null|                           null|                        null|                null|               null|                  1.0|                              null|                                  null|        0.040244617|                         null|                     9.0|                 16.0|                662.0|                    null|                null|                null|                null|                       null|                      null|                        null|                         null|                      null|            0.81291527|                61.0|                                 null|                               null|                        0.99990857|                   0.9168273|                                       null|                                       null|                                    null|                             null|                  0.9999628|                          null|                                      null|                                   null|                                            null|                                     null|                                       null|                                    null|                                    null|                                    null|                                             null|                        null|                            null|                          null|                              null|                     null|2018-03-04|\n|              423|                 Post|           33834009|        5|             API|  1520181187538|        71525659|    XPRM-5386_G9|                14|           12988|         GROUP_OPEN|     1519829634000|          1076820|                     0|                     0|                 0|                0|                  0|                 0|                 0|          ANDROID|                        0|[IS_PART_OF_TOPIC...|         null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|             null|                       null|               null|                      null|             null|            null|        null|        null|            null|             null|           null|            null|           null|              null|               null|                  null|        null|   1173262601920|           1763|          2|        192|    10414533690|         3385314|             1|              0|             0|                1|     1446451940380|                    0|          1|         [Liked]|33834009|       3.4003936E8|               null|           0.0147976205|           0.07924716|               0.00522269|               0.51608413|                                    null|                   0.1|                           null|                         null|                     1.0|                            1.0|                        null|                null|               null|                  1.0|                               1.0|                                  null|        3.970516E-5|                         null|                    36.0|                106.0|               6793.0|                    null|                null|                null|                null|                       null|                      null|                        null|                         null|                      null|            0.69021666|                43.0|                                 null|                               null|                              null|                        null|                                       null|                                       null|                                    null|                             null|                       null|                          null|                                      null|                                   null|                                            null|                                     null|                                       null|                                    null|                                    null|                                    null|                                             null|                        null|                            null|                            32|                         0.8158334|                     null|2018-03-04|\n|              624|                 Post|           25653019|        5|             WEB|  1520149339921|   1520149339921| XPRM-explore.q2|                 8|            2772|GROUP_OPEN_OFFICIAL|     1520123422000|           608137|                     0|                     0|                 1|                0|                 37|                 5|                 0|            OTHER|                        0|[HAS_TEXT, HAS_PH...|         null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|             null|                       null|               null|                      null|             null|            null|        null|        null|            null|             null|           null|            null|           null|              null|               null|                  null|        null|   1179934071693|          -3846|          2|        128|    10414533690|         1112209|             1|              0|             0|                1|     1445517842953|                    0|         13|       [Ignored]|25653019|        2.591742E7|               null|            0.014586994|           0.07823428|             0.0031282953|               0.97587365|                                   0.725|                   0.1|                           null|                         null|                    null|                           null|                        null|                 1.0|               null|                  1.0|                              null|                                  null|         0.02061828|                         null|                    null|                 null|                 null|                    null|                null|                null|                null|                       null|                      null|                        null|                         null|                      null|             0.7401656|                58.0|                                 null|                               null|                              null|                        null|                                       null|                                       null|                                    null|                             null|                       null|                          null|                                      null|                                   null|                                            null|                                     null|                                       null|                                    null|                                    null|                                    null|                                             null|                        null|                            null|                          null|                              null|                     null|2018-03-04|\n|              768|                 Post|           24024934|       20|             API|  1520180595763|          624657|    XPRM-5386_G1|                 8|           20289|GROUP_OPEN_OFFICIAL|     1520132432000|           565604|                     0|                     0|                 6|                0|                 51|                 3|                 0|            OTHER|                        0|[HAS_TEXT, HAS_PH...|         null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                A|              1408564875883|      1408564860000|                      null|             null|            null|        null|        null|            null|             null|           null|            null|           null|              null|               null|                  null|        null|   1171835598907|           3251|          2|        192|    10397571399|         2393098|             1|              0|             0|                1|     1445517661617|                    0|        142|       [Ignored]|24024934|       4.8163232E7|               null|            0.011985388|           0.06924916|             0.0014776505|                0.9690083|                                    null|                   0.1|                           null|                         null|                    null|                           null|                        null|                null|               null|                  1.0|                              null|                                  null|        0.008221154|                         null|                    72.0|                671.0|              48626.0|                    null|                null|                null|                null|                       null|                      null|                        null|                         null|                      null|             0.8230912|                39.0|                                 null|                               null|                              null|                        null|                                       null|                                       null|                                    null|                             null|                       null|                          null|                                      null|                                   null|                                            null|                                     null|                                       null|                                    null|                                    null|                                    null|                                             null|                        null|                            null|                          null|                              null|                     null|2018-03-04|\n|             1206|                 Post|           25075524|        2|             WEB|  1520160411706|   1520160411706| XPRM-explore.q2|                 8|           67250|GROUP_OPEN_OFFICIAL|     1520153709000|           981198|                     0|                     0|                 1|                0|                  0|                 0|                 0|            OTHER|                        0|[HAS_PHOTOS, IS_P...|         null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|             null|                       null|               null|                      null|             null|            null|        null|        null|            null|             null|           null|            null|           null|              null|               null|                  null|        null|   1171859237483|           3492|          2|        128|    10414533690|         3209073|             1|              0|             0|                1|     1355974360467|                 null|         11|       [Ignored]|25075524|         6702559.0|               null|            0.010255575|           0.05975674|              0.003581312|               0.98059106|                              0.63166666|                   0.1|                           null|                         null|                    null|                           null|                        null|                null|               null|                  1.0|                              null|                                  null|        0.017706964|                         null|                    null|                 null|                 null|                    null|                null|                null|                null|                       null|                      null|                        null|                         null|                      null|            0.71122456|                38.0|                                 null|                               null|                              null|                        null|                                       null|                                       null|                                    null|                             null|                       null|                          null|                                      null|                                   null|                                            null|                                     null|                                       null|                                    null|                                    null|                                    null|                                             null|                        null|                            null|                          null|                              null|                     null|2018-03-04|\n|             1752|                 Post|           18132300|       22|             WEB|  1520149355325|         6498281|   XPRM-5386_G10|                 8|           60284|GROUP_OPEN_OFFICIAL|     1519733418000|           579806|                     0|                     0|                 4|                0|                 37|                 5|                 0|            OTHER|                        0|[HAS_TEXT, HAS_PH...|         null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|             null|                       null|               null|                      null|             null|            null|        null|        null|            null|             null|           null|            null|           null|              null|               null|                  null|        null|   1170907011110|          -4507|          2|        192|    10414533690|         3974068|             1|              0|             0|                1|     1516975120647|                    0|         19|[Clicked, Liked]|18132300|       9.2965808E7|               null|            0.024345802|           0.12861122|             0.0018316591|                0.9490205|                                    null|                   0.1|                           null|                         null|                     1.0|                            1.0|                        null|                null|               null|                  1.0|                             126.0|                                  null|        0.012459442|                         null|                   192.0|               2696.0|             104723.0|                    null|                null|                null|                null|                       null|                      null|                        null|                         null|                      null|             0.8539802|                60.0|                                 null|                               null|                              null|                        null|                                       null|                                       null|                                    null|                             null|                       null|                          null|                                      null|                                   null|                                            null|                                     null|                                       null|                                    null|                                    null|                                    null|                                             null|                        null|                            null|                          null|                         0.9721785|                     null|2018-03-04|\n|             1752|                Photo|            2402728|        2|             WEB|  1520149355325|         6498281|   XPRM-5386_G10|                 3|            6480|         GROUP_OPEN|     1520135135000|           200111|                     0|                     0|                 0|                0|                  0|                 0|                 0|              WEB|                        0|[IS_PART_OF_ALBUM...|         null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                A|              1423159395137|      1423159380000|                      null|             null|            null|        null|        null|            null|             null|           null|            null|           null|              null|               null|                  null|        null|   1170907011110|          -4507|          2|        192|    10414533690|         3974068|             1|              0|             0|                1|     1516975120647|                    0|         19|         [Liked]| 2402728|        1.421971E7|               null|           0.0032467532|          0.024405614|              0.003837072|                0.9788641|                                    null|                   0.5|                           null|                         null|                    null|                           null|                        null|                null|               null|                  1.0|                              null|                                  null|       0.0019614967|                          1.0|                    13.0|                 10.0|               3288.0|                    null|                null|                null|                null|                       null|                      null|                        null|                         null|                      null|            0.51198924|                60.0|                                 null|                               null|                              null|                        null|                                       null|                                       null|                                    null|                             null|                       null|                          null|                                      null|                                   null|                                            null|                                     null|                                       null|                                    null|                                    null|                                    null|                                             null|                        null|                            null|                          null|                              null|                     null|2018-03-04|\n|             1752|                 Post|           17153719|       19|             WEB|  1520159055559|          211038|   XPRM-5386_G10|                 8|             334|GROUP_OPEN_OFFICIAL|     1520061011000|           980484|                     0|                     0|                 1|                0|                  0|                 0|                 0|              WEB|                        0|[HAS_PHOTOS, IS_P...|         null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|             null|                       null|               null|                      null|             null|            null|        null|        null|            null|             null|           null|            null|           null|              null|               null|                  null|        null|   1170907011110|          -4507|          2|        192|    10414533690|         3974068|             1|              0|             0|                1|     1516975120647|                    0|         19|       [Ignored]|17153719|       2.8347766E7|               null|            0.022798155|            0.1888138|              0.002679552|               0.97520244|                                    null|                   0.1|                           null|                         null|                     1.0|                            1.0|                        null|                null|               null|                  1.0|                               1.0|                                  null|        0.014074322|                         null|                    61.0|                863.0|              22665.0|                    null|                null|                null|                null|                       null|                      null|                        null|                         null|                      null|            0.86783284|                60.0|                                 null|                               null|                              null|                        null|                                       null|                                       null|                                    null|                             null|                       null|                          null|                                      null|                                   null|                                            null|                                     null|                                       null|                                    null|                                    null|                                    null|                                             null|                        null|                            null|                          null|                         0.9268815|                     null|2018-03-04|\n|             2514|                 Post|           19499734|       12|             API|  1520180648026|        22002490|    XPRM-5386_G1|                 8|           34136|GROUP_OPEN_OFFICIAL|     1519845176000|           551826|                     0|                     0|                 2|                0|                 87|                11|                 0|            OTHER|                        0|[HAS_TEXT, HAS_PH...|         null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|                              null|                               null|                       null|                               null|                                 null|                                null|                                  null|                                        null|                                  null|                                  null|                                             null|                                   null|                                       null|                               null|                        null|                                    null|                              null|                               null|                     null|                          null|                          null|                          null|                            null|                         null|                  null|                   null|                   null|             null|                       null|               null|                      null|             null|            null|        null|        null|            null|             null|           null|            null|           null|              null|               null|                  null|        null|   1167223443853|            797|          2|        128|    10414533690|         3385314|             1|              0|             0|                1|     1445517699760|                    0|         11|       [Ignored]|19499734|      3.25456448E8|               null|            0.016049346|           0.08288171|             9.0624724E-4|               0.55802315|                                    null|                   0.1|                           null|                         null|                     1.0|                            1.0|                        null|                null|               null|                  1.0|                               2.0|                                  null|        0.008749041|                         null|                    31.0|                564.0|              34107.0|                    null|                null|                null|                null|                       null|                      null|                        null|                         null|                      null|            0.82889277|                45.0|                                 null|                               null|                              null|                        null|                                       null|                                       null|                                    null|                             null|                       null|                          null|                                      null|                                   null|                                            null|                                     null|                                       null|                                    null|                                    null|                                    null|                                             null|                        null|                            null|                          null|                         0.7280458|                     null|2018-03-04|\n+-----------------+---------------------+-------------------+---------+----------------+---------------+----------------+----------------+------------------+----------------+-------------------+------------------+-----------------+----------------------+----------------------+------------------+-----------------+-------------------+------------------+------------------+-----------------+-------------------------+--------------------+-------------+----------------------------------+-----------------------------------+---------------------------+-----------------------------------+-------------------------------------+------------------------------------+--------------------------------------+--------------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------------------+---------------------------------------+-------------------------------------------+-----------------------------------+----------------------------+----------------------------------------+----------------------------------+-----------------------------------+-------------------------+------------------------------+------------------------------+------------------------------+--------------------------------+-----------------------------+----------------------+-----------------------+-----------------------+----------------------------------+-----------------------------------+---------------------------+-----------------------------------+-------------------------------------+------------------------------------+--------------------------------------+--------------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------------------+---------------------------------------+-------------------------------------------+-----------------------------------+----------------------------+----------------------------------------+----------------------------------+-----------------------------------+-------------------------+------------------------------+------------------------------+------------------------------+--------------------------------+-----------------------------+----------------------+-----------------------+-----------------------+-----------------+---------------------------+-------------------+--------------------------+-----------------+----------------+------------+------------+----------------+-----------------+---------------+----------------+---------------+------------------+-------------------+----------------------+------------+----------------+---------------+-----------+-----------+---------------+----------------+--------------+---------------+--------------+-----------------+------------------+---------------------+-----------+----------------+--------+------------------+-------------------+-----------------------+---------------------+-------------------------+-------------------------+----------------------------------------+----------------------+-------------------------------+-----------------------------+------------------------+-------------------------------+----------------------------+--------------------+-------------------+---------------------+----------------------------------+--------------------------------------+-------------------+-----------------------------+------------------------+---------------------+---------------------+------------------------+--------------------+--------------------+--------------------+---------------------------+--------------------------+----------------------------+-----------------------------+--------------------------+----------------------+--------------------+-------------------------------------+-----------------------------------+----------------------------------+----------------------------+-------------------------------------------+-------------------------------------------+----------------------------------------+---------------------------------+---------------------------+------------------------------+------------------------------------------+---------------------------------------+------------------------------------------------+-----------------------------------------+-------------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+-------------------------------------------------+----------------------------+--------------------------------+------------------------------+----------------------------------+-------------------------+----------+\nonly showing top 10 rows\n\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=2"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717499949_761524319",
+   "id": "paragraph_1620717499949_761524319",
+   "dateCreated": "2021-05-11T10:18:19+0300",
+   "dateStarted": "2021-05-11T10:18:19+0300",
+   "dateFinished": "2021-05-11T10:18:24+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\n\ndf.createOrReplaceTempView(\"df\")\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:24+0300",
+   "progress": 0.0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {
+     "0": {
+      "graph": {
+       "mode": "table",
+       "height": 167.0,
+       "optionOpen": false
+      }
+     }
+    },
+    "enabled": true
+   },
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": []
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717504467_2099472465",
+   "id": "paragraph_1620717504467_2099472465",
+   "dateCreated": "2021-05-11T10:18:24+0300",
+   "dateStarted": "2021-05-11T10:18:24+0300",
+   "dateFinished": "2021-05-11T10:18:24+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n### Проверим на уникальность композитный ключ из колонок instanceId_userId, instanceId_objectId, date",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:25+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "size": {
+        "height": 104.0
+       },
+       "state": {}
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h3>Проверим на уникальность композитный ключ из колонок instanceId_userId, instanceId_objectId, date</h3>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717505007_323164758",
+   "id": "paragraph_1620717505007_323164758",
+   "dateCreated": "2021-05-11T10:18:25+0300",
+   "dateStarted": "2021-05-11T10:18:25+0300",
+   "dateFinished": "2021-05-11T10:18:25+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%sql\nselect instanceId_userId, instanceId_objectId, `date`, count(*)\nfrom df\ngroup by instanceId_userId, instanceId_objectId, `date`\nhaving count(*) > 1\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:25+0300",
+   "progress": 55.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TABLE",
+      "data": "instanceId_userId\tinstanceId_objectId\tdate\tcount(1)\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=3"
+      },
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=4"
+      },
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=5"
+      },
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=6"
+      },
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=7"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717505156_2139843149",
+   "id": "paragraph_1620717505156_2139843149",
+   "dateCreated": "2021-05-11T10:18:25+0300",
+   "dateStarted": "2021-05-11T10:18:25+0300",
+   "dateFinished": "2021-05-11T10:18:37+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md \n#### Легче добавить каждой колонке UUID\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:38+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h4>Легче добавить каждой колонке UUID</h4>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717518089_305467779",
+   "id": "paragraph_1620717518089_305467779",
+   "dateCreated": "2021-05-11T10:18:38+0300",
+   "dateStarted": "2021-05-11T10:18:38+0300",
+   "dateFinished": "2021-05-11T10:18:38+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\n\nval uuid = udf(() => java.util.UUID.randomUUID().toString)\ndf = df.withColumn(\"id\", uuid())",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:38+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34muuid\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.expressions.UserDefinedFunction\u001b[0m = UserDefinedFunction(<function0>,StringType,Some(List()))\ndf: org.apache.spark.sql.DataFrame = [instanceId_userId: int, instanceId_objectType: string ... 168 more fields]\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717518183_1524462764",
+   "id": "paragraph_1620717518183_1524462764",
+   "dateCreated": "2021-05-11T10:18:38+0300",
+   "dateStarted": "2021-05-11T10:18:38+0300",
+   "dateFinished": "2021-05-11T10:18:39+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\ndf.count()",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:40+0300",
+   "progress": 20.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mres4\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 18286575\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=8"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717520009_1879557232",
+   "id": "paragraph_1620717520009_1879557232",
+   "dateCreated": "2021-05-11T10:18:40+0300",
+   "dateStarted": "2021-05-11T10:18:40+0300",
+   "dateFinished": "2021-05-11T10:18:41+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\nval likedUdf = udf((any: Any) => if (any.toString.contains(\"Liked\")) 1 else 0)\ndf = df.withColumn(\"liked\", likedUdf(col(\"feedback\")))",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:41+0300",
+   "progress": 0.0,
+   "config": {
+    "results": [
+     {}
+    ]
+   },
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "state": {
+        "currentPage": "Table",
+        "table": {
+         "columnWidths": {
+          "col": 169.0
+         }
+        }
+       }
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mlikedUdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.expressions.UserDefinedFunction\u001b[0m = UserDefinedFunction(<function1>,IntegerType,None)\ndf: org.apache.spark.sql.DataFrame = [instanceId_userId: int, instanceId_objectType: string ... 169 more fields]\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717521647_130306937",
+   "id": "paragraph_1620717521647_130306937",
+   "dateCreated": "2021-05-11T10:18:41+0300",
+   "dateStarted": "2021-05-11T10:18:41+0300",
+   "dateFinished": "2021-05-11T10:18:42+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n#### Посчитаем самые популярные группы по показам в лентах",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:42+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h4>Посчитаем самые популярные группы по показам в лентах</h4>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717522243_1866400065",
+   "id": "paragraph_1620717522243_1866400065",
+   "dateCreated": "2021-05-11T10:18:42+0300",
+   "dateStarted": "2021-05-11T10:18:42+0300",
+   "dateFinished": "2021-05-11T10:18:42+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\ndf.select($\"metadata_ownerId\", $\"id\")\n        .groupBy($\"metadata_ownerId\")\n        .count()\n        .orderBy(desc(\"count\"))\n        .show(10)",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:22:46+0300",
+   "progress": 62.0,
+   "config": {
+    "results": [
+     {}
+    ]
+   },
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "state": {
+        "currentPage": "Chart",
+        "chart": {
+         "series": [
+          {
+           "type": "Line"
+          },
+          {
+           "type": "Bar",
+           "categories": {
+            "column": "metadata_ownerId",
+            "index": 0.0
+           },
+           "bars": [
+            {
+             "column": "count",
+             "index": 1.0
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "+----------------+-----+\n|metadata_ownerId|count|\n+----------------+-----+\n|           37463|71558|\n|           76851|53090|\n|           11222|49656|\n|           65305|46334|\n|            8225|44342|\n|           38703|44308|\n|           18942|42829|\n|           62833|40545|\n|           79619|40540|\n|           19481|40370|\n+----------------+-----+\nonly showing top 10 rows\n\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=14"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717766257_446737782",
+   "id": "paragraph_1620717766257_446737782",
+   "dateCreated": "2021-05-11T10:22:46+0300",
+   "dateStarted": "2021-05-11T10:22:46+0300",
+   "dateFinished": "2021-05-11T10:22:49+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n#### Теперь посчитаем самые популярные группы по лайкам",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:18:46+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h4>Теперь посчитаем самые популярные группы по лайкам</h4>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717526550_1454373197",
+   "id": "paragraph_1620717526550_1454373197",
+   "dateCreated": "2021-05-11T10:18:46+0300",
+   "dateStarted": "2021-05-11T10:18:46+0300",
+   "dateFinished": "2021-05-11T10:18:46+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\ndf.select($\"metadata_ownerId\", $\"id\", $\"liked\")\n        .where($\"liked\" === 1)\n        .groupBy($\"metadata_ownerId\")\n        .count()\n        .orderBy(desc(\"count\"))\n        .show(10)\n\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:23:16+0300",
+   "progress": 31.0,
+   "config": {
+    "results": [
+     {}
+    ]
+   },
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "state": {
+        "currentPage": "Chart",
+        "chart": {
+         "series": [
+          {
+           "type": "Line"
+          },
+          {
+           "type": "Bar",
+           "categories": {
+            "column": "metadata_ownerId",
+            "index": 0.0
+           },
+           "bars": [
+            {
+             "column": "count",
+             "index": 1.0
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "+----------------+-----+\n|metadata_ownerId|count|\n+----------------+-----+\n|           37463|16726|\n|           11222|12301|\n|           18942|10160|\n|           14285|10024|\n|           62833| 9428|\n|           26843| 8779|\n|           19481| 8717|\n|           79619| 8519|\n|           11058| 8384|\n|           26735| 7770|\n+----------------+-----+\nonly showing top 10 rows\n\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=15"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717796924_230975427",
+   "id": "paragraph_1620717796924_230975427",
+   "dateCreated": "2021-05-11T10:23:16+0300",
+   "dateStarted": "2021-05-11T10:23:16+0300",
+   "dateFinished": "2021-05-11T10:23:24+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n#### Графики в корне проекта /plots/topGroups.png и /plots/topGroupsLiked.png",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:31:55+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h4>Графики в корне проекта /plots/topGroups.png и /plots/topGroupsLiked.png</h4>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620718315364_744448948",
+   "id": "paragraph_1620718315364_744448948",
+   "dateCreated": "2021-05-11T10:31:55+0300",
+   "dateStarted": "2021-05-11T10:31:55+0300",
+   "dateFinished": "2021-05-11T10:31:55+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n#### В обоих случаях один и тот же лидер и Top 10 довольно похож",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:31:52+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h4>В обоих случаях один и тот же лидер и Top 10 довольно похож</h4>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620718312647_10642890",
+   "id": "paragraph_1620718312647_10642890",
+   "dateCreated": "2021-05-11T10:31:52+0300",
+   "dateStarted": "2021-05-11T10:31:52+0300",
+   "dateFinished": "2021-05-11T10:31:52+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n#### Посмотрим на дневные колебания просмотров",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:52:31+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h4>Посмотрим на дневные колебания просмотров</h4>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620719551226_1027200153",
+   "id": "paragraph_1620719551226_1027200153",
+   "dateCreated": "2021-05-11T10:52:31+0300",
+   "dateStarted": "2021-05-11T10:52:31+0300",
+   "dateFinished": "2021-05-11T10:52:31+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\ndf.select($\"metadata_ownerId\", $\"id\", $\"liked\", from_unixtime($\"audit_timestamp\" / 1000) as \"dt\")\n        .groupBy(hour($\"dt\") as \"hour\")\n        .count()\n        .orderBy(asc(\"hour\"))\n        .show(24)\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T11:06:38+0300",
+   "progress": 46.0,
+   "config": {
+    "results": [
+     {}
+    ]
+   },
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "state": {
+        "currentPage": "Chart",
+        "table": {
+         "visibleRow": 9.0
+        },
+        "chart": {
+         "series": [
+          {
+           "type": "Line"
+          },
+          {
+           "type": "Bar",
+           "categories": {
+            "column": "hour",
+            "index": 0.0
+           },
+           "bars": [
+            {
+             "column": "count",
+             "index": 1.0
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "+----+-------+\n|hour|  count|\n+----+-------+\n|   0| 347801|\n|   1| 214532|\n|   2| 171799|\n|   3| 190669|\n|   4| 255999|\n|   5| 353397|\n|   6| 508045|\n|   7| 662820|\n|   8| 787754|\n|   9| 831354|\n|  10| 837955|\n|  11| 843048|\n|  12| 858546|\n|  13| 889471|\n|  14| 922062|\n|  15| 972513|\n|  16|1029619|\n|  17|1122013|\n|  18|1213270|\n|  19|1276641|\n|  20|1275757|\n|  21|1180341|\n|  22| 917899|\n|  23| 623270|\n+----+-------+\n\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=22"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620720398785_310728188",
+   "id": "paragraph_1620720398785_310728188",
+   "dateCreated": "2021-05-11T11:06:38+0300",
+   "dateStarted": "2021-05-11T11:06:38+0300",
+   "dateFinished": "2021-05-11T11:06:51+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n#### Как и ожидалось: топ приходится на 18-21, а наименьшие значения с 0 до 5\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T11:08:50+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h4>Как и ожидалось: топ приходится на 18-21, а наименьшие значения с 0 до 5</h4>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620720530333_363629462",
+   "id": "paragraph_1620720530333_363629462",
+   "dateCreated": "2021-05-11T11:08:50+0300",
+   "dateStarted": "2021-05-11T11:08:50+0300",
+   "dateFinished": "2021-05-11T11:08:50+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n\n#### В датасете слишком много колонок, надо отфильтровать",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:32:03+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h4>В датасете слишком много колонок, надо отфильтровать</h4>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620718323033_303420925",
+   "id": "paragraph_1620718323033_303420925",
+   "dateCreated": "2021-05-11T10:32:03+0300",
+   "dateStarted": "2021-05-11T10:32:03+0300",
+   "dateFinished": "2021-05-11T10:32:03+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\n\ndf.columns.length\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:19:00+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mres7\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 171\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717540380_161429781",
+   "id": "paragraph_1620717540380_161429781",
+   "dateCreated": "2021-05-11T10:19:00+0300",
+   "dateStarted": "2021-05-11T10:19:00+0300",
+   "dateFinished": "2021-05-11T10:19:00+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\n\nval rowFilter = (s: String) => (s.startsWith(\"audit\") || s.startsWith(\"liked\")) && !s.contains(\"clientType\") && !s.contains(\"experiment\")\nvar auditDf = df.select(df.columns.filter(rowFilter).map(df(_)): _*)\nauditDf.printSchema()\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:19:00+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "root\n |-- audit_pos: long (nullable = true)\n |-- audit_timestamp: long (nullable = true)\n |-- audit_timePassed: long (nullable = true)\n |-- audit_resourceType: long (nullable = true)\n |-- auditweights_ageMs: double (nullable = true)\n |-- auditweights_closed: double (nullable = true)\n |-- auditweights_ctr_gender: double (nullable = true)\n |-- auditweights_ctr_high: double (nullable = true)\n |-- auditweights_ctr_negative: double (nullable = true)\n |-- auditweights_dailyRecency: double (nullable = true)\n |-- auditweights_feedOwner_RECOMMENDED_GROUP: double (nullable = true)\n |-- auditweights_feedStats: double (nullable = true)\n |-- auditweights_friendCommentFeeds: double (nullable = true)\n |-- auditweights_friendCommenters: double (nullable = true)\n |-- auditweights_friendLikes: double (nullable = true)\n |-- auditweights_friendLikes_actors: double (nullable = true)\n |-- auditweights_hasDetectedText: double (nullable = true)\n |-- auditweights_hasText: double (nullable = true)\n |-- auditweights_isPymk: double (nullable = true)\n |-- auditweights_isRandom: double (nullable = true)\n |-- auditweights_likersFeedStats_hyper: double (nullable = true)\n |-- auditweights_likersSvd_prelaunch_hyper: double (nullable = true)\n |-- auditweights_matrix: double (nullable = true)\n |-- auditweights_notOriginalPhoto: double (nullable = true)\n |-- auditweights_numDislikes: double (nullable = true)\n |-- auditweights_numLikes: double (nullable = true)\n |-- auditweights_numShows: double (nullable = true)\n |-- auditweights_onlineVideo: double (nullable = true)\n |-- auditweights_partAge: double (nullable = true)\n |-- auditweights_partCtr: double (nullable = true)\n |-- auditweights_partSvd: double (nullable = true)\n |-- auditweights_processedVideo: double (nullable = true)\n |-- auditweights_relationMasks: double (nullable = true)\n |-- auditweights_source_LIVE_TOP: double (nullable = true)\n |-- auditweights_source_MOVIE_TOP: double (nullable = true)\n |-- auditweights_svd_prelaunch: double (nullable = true)\n |-- auditweights_svd_spark: double (nullable = true)\n |-- auditweights_userAge: double (nullable = true)\n |-- auditweights_userOwner_CREATE_COMMENT: double (nullable = true)\n |-- auditweights_userOwner_CREATE_IMAGE: double (nullable = true)\n |-- auditweights_userOwner_CREATE_LIKE: double (nullable = true)\n |-- auditweights_userOwner_IMAGE: double (nullable = true)\n |-- auditweights_userOwner_MOVIE_COMMENT_CREATE: double (nullable = true)\n |-- auditweights_userOwner_PHOTO_COMMENT_CREATE: double (nullable = true)\n |-- auditweights_userOwner_PHOTO_MARK_CREATE: double (nullable = true)\n |-- auditweights_userOwner_PHOTO_VIEW: double (nullable = true)\n |-- auditweights_userOwner_TEXT: double (nullable = true)\n |-- auditweights_userOwner_UNKNOWN: double (nullable = true)\n |-- auditweights_userOwner_USER_DELETE_MESSAGE: double (nullable = true)\n |-- auditweights_userOwner_USER_FEED_REMOVE: double (nullable = true)\n |-- auditweights_userOwner_USER_FORUM_MESSAGE_CREATE: double (nullable = true)\n |-- auditweights_userOwner_USER_INTERNAL_LIKE: double (nullable = true)\n |-- auditweights_userOwner_USER_INTERNAL_UNLIKE: double (nullable = true)\n |-- auditweights_userOwner_USER_PRESENT_SEND: double (nullable = true)\n |-- auditweights_userOwner_USER_PROFILE_VIEW: double (nullable = true)\n |-- auditweights_userOwner_USER_SEND_MESSAGE: double (nullable = true)\n |-- auditweights_userOwner_USER_STATUS_COMMENT_CREATE: double (nullable = true)\n |-- auditweights_userOwner_VIDEO: double (nullable = true)\n |-- auditweights_userOwner_VOTE_POLL: double (nullable = true)\n |-- auditweights_x_ActorsRelations: long (nullable = true)\n |-- auditweights_likersSvd_spark_hyper: double (nullable = true)\n |-- auditweights_source_PROMO: double (nullable = true)\n |-- liked: integer (nullable = false)\n\n\u001b[1m\u001b[34mrowFilter\u001b[0m: \u001b[1m\u001b[32mString => Boolean\u001b[0m = <function1>\n\u001b[1m\u001b[34mauditDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [audit_pos: bigint, audit_timestamp: bigint ... 61 more fields]\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717540666_1446574356",
+   "id": "paragraph_1620717540666_1446574356",
+   "dateCreated": "2021-05-11T10:19:00+0300",
+   "dateStarted": "2021-05-11T10:19:00+0300",
+   "dateFinished": "2021-05-11T10:19:01+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\n\nauditDf = auditDf.na.fill(0)",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:19:01+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "auditDf: org.apache.spark.sql.DataFrame = [audit_pos: bigint, audit_timestamp: bigint ... 61 more fields]\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717541343_1053335003",
+   "id": "paragraph_1620717541343_1053335003",
+   "dateCreated": "2021-05-11T10:19:01+0300",
+   "dateStarted": "2021-05-11T10:19:01+0300",
+   "dateFinished": "2021-05-11T10:19:01+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\nfor (column <- auditDf.columns) {\n    val tmpCol = column + \"tmp\"\n    auditDf = auditDf.withColumn(tmpCol, col(column).cast(\"double\"))\n            .drop(column)\n            .withColumnRenamed(tmpCol, column)\n}",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:19:01+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": []
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717541950_1464575053",
+   "id": "paragraph_1620717541950_1464575053",
+   "dateCreated": "2021-05-11T10:19:01+0300",
+   "dateStarted": "2021-05-11T10:19:01+0300",
+   "dateFinished": "2021-05-11T10:19:04+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\nauditDf.printSchema()",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:19:04+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "root\n |-- audit_pos: double (nullable = false)\n |-- audit_timestamp: double (nullable = false)\n |-- audit_timePassed: double (nullable = false)\n |-- audit_resourceType: double (nullable = false)\n |-- auditweights_ageMs: double (nullable = false)\n |-- auditweights_closed: double (nullable = false)\n |-- auditweights_ctr_gender: double (nullable = false)\n |-- auditweights_ctr_high: double (nullable = false)\n |-- auditweights_ctr_negative: double (nullable = false)\n |-- auditweights_dailyRecency: double (nullable = false)\n |-- auditweights_feedOwner_RECOMMENDED_GROUP: double (nullable = false)\n |-- auditweights_feedStats: double (nullable = false)\n |-- auditweights_friendCommentFeeds: double (nullable = false)\n |-- auditweights_friendCommenters: double (nullable = false)\n |-- auditweights_friendLikes: double (nullable = false)\n |-- auditweights_friendLikes_actors: double (nullable = false)\n |-- auditweights_hasDetectedText: double (nullable = false)\n |-- auditweights_hasText: double (nullable = false)\n |-- auditweights_isPymk: double (nullable = false)\n |-- auditweights_isRandom: double (nullable = false)\n |-- auditweights_likersFeedStats_hyper: double (nullable = false)\n |-- auditweights_likersSvd_prelaunch_hyper: double (nullable = false)\n |-- auditweights_matrix: double (nullable = false)\n |-- auditweights_notOriginalPhoto: double (nullable = false)\n |-- auditweights_numDislikes: double (nullable = false)\n |-- auditweights_numLikes: double (nullable = false)\n |-- auditweights_numShows: double (nullable = false)\n |-- auditweights_onlineVideo: double (nullable = false)\n |-- auditweights_partAge: double (nullable = false)\n |-- auditweights_partCtr: double (nullable = false)\n |-- auditweights_partSvd: double (nullable = false)\n |-- auditweights_processedVideo: double (nullable = false)\n |-- auditweights_relationMasks: double (nullable = false)\n |-- auditweights_source_LIVE_TOP: double (nullable = false)\n |-- auditweights_source_MOVIE_TOP: double (nullable = false)\n |-- auditweights_svd_prelaunch: double (nullable = false)\n |-- auditweights_svd_spark: double (nullable = false)\n |-- auditweights_userAge: double (nullable = false)\n |-- auditweights_userOwner_CREATE_COMMENT: double (nullable = false)\n |-- auditweights_userOwner_CREATE_IMAGE: double (nullable = false)\n |-- auditweights_userOwner_CREATE_LIKE: double (nullable = false)\n |-- auditweights_userOwner_IMAGE: double (nullable = false)\n |-- auditweights_userOwner_MOVIE_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_MARK_CREATE: double (nullable = false)\n |-- auditweights_userOwner_PHOTO_VIEW: double (nullable = false)\n |-- auditweights_userOwner_TEXT: double (nullable = false)\n |-- auditweights_userOwner_UNKNOWN: double (nullable = false)\n |-- auditweights_userOwner_USER_DELETE_MESSAGE: double (nullable = false)\n |-- auditweights_userOwner_USER_FEED_REMOVE: double (nullable = false)\n |-- auditweights_userOwner_USER_FORUM_MESSAGE_CREATE: double (nullable = false)\n |-- auditweights_userOwner_USER_INTERNAL_LIKE: double (nullable = false)\n |-- auditweights_userOwner_USER_INTERNAL_UNLIKE: double (nullable = false)\n |-- auditweights_userOwner_USER_PRESENT_SEND: double (nullable = false)\n |-- auditweights_userOwner_USER_PROFILE_VIEW: double (nullable = false)\n |-- auditweights_userOwner_USER_SEND_MESSAGE: double (nullable = false)\n |-- auditweights_userOwner_USER_STATUS_COMMENT_CREATE: double (nullable = false)\n |-- auditweights_userOwner_VIDEO: double (nullable = false)\n |-- auditweights_userOwner_VOTE_POLL: double (nullable = false)\n |-- auditweights_x_ActorsRelations: double (nullable = false)\n |-- auditweights_likersSvd_spark_hyper: double (nullable = false)\n |-- auditweights_source_PROMO: double (nullable = false)\n |-- liked: double (nullable = false)\n\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717544491_1020975394",
+   "id": "paragraph_1620717544491_1020975394",
+   "dateCreated": "2021-05-11T10:19:04+0300",
+   "dateStarted": "2021-05-11T10:19:04+0300",
+   "dateFinished": "2021-05-11T10:19:04+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\nimport org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.{Matrix, Vectors}\nimport org.apache.spark.ml.stat.Correlation\nimport org.apache.spark.sql.Row\nimport spark.implicits._\n\nval sample = auditDf.sample(withReplacement = true, 0.05)\n\nval assembler = new VectorAssembler()\n        .setInputCols(sample.columns)\n        .setOutputCol(\"corr\")\n        .transform(sample)\n        .select(\"corr\")\nval corr = Correlation.corr(assembler, \"corr\")\ncorr.show(10)\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:19:04+0300",
+   "progress": 100.0,
+   "config": {
+    "results": [
+     {}
+    ]
+   },
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "state": {
+        "currentPage": "Console"
+       }
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "+--------------------+\n|       pearson(corr)|\n+--------------------+\n|1.0              ...|\n+--------------------+\n\nimport org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.{Matrix, Vectors}\nimport org.apache.spark.ml.stat.Correlation\nimport org.apache.spark.sql.Row\nimport spark.implicits._\n\u001b[1m\u001b[34msample\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [audit_pos: double, audit_timestamp: double ... 61 more fields]\n\u001b[1m\u001b[34massembler\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [corr: vector]\n\u001b[1m\u001b[34mcorr\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [pearson(corr): matrix]\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "SPARK JOB",
+     "tooltip": "View in Spark web UI",
+     "group": "spark",
+     "values": [
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=11"
+      },
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=12"
+      },
+      {
+       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=13"
+      }
+     ],
+     "interpreterSettingId": "spark"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717544732_164401473",
+   "id": "paragraph_1620717544732_164401473",
+   "dateCreated": "2021-05-11T10:19:04+0300",
+   "dateStarted": "2021-05-11T10:19:04+0300",
+   "dateFinished": "2021-05-11T10:20:28+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%spark\n\ncorr.collect()(0).mkString.split(\" \").toSeq\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:20:28+0300",
+   "progress": 0.0,
+   "config": {
+    "results": [
+     {}
+    ]
+   },
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "state": {
+        "currentPage": "Table",
+        "table": {
+         "columnWidths": {
+          "pearson(feature)": 175.0
+         }
+        }
+       }
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mres12\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m =\nWrappedArray(1.0, \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", 0.002262906537394305, \"\", \"\", \"\", ..., (63, total)\n0.002262906537394305, \"\", \"\", \"\", 1.0, \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", ...\n0.009401842949685428, \"\", \"\", \"\", 0.011268929296477869, \"\", \"\", \"\", ...\n-0.0027360742620208467, \"\", 0.008818237234949344, \"\", \"\", \"\", ...\n-0.05541785505046595, \"\", \"\", \"\", 0.0786190163634104, \"\", \"\", \"\", \"\", \"\", ...\nNaN, \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", NaN, \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", ...\n-0.002394207515645804, \"\", \"\", -0.02823233058837669, \"\", \"\", \"\", ...\n-0.0385236616205550..."
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717628800_2139712719",
+   "id": "paragraph_1620717628800_2139712719",
+   "dateCreated": "2021-05-11T10:20:28+0300",
+   "dateStarted": "2021-05-11T10:20:28+0300",
+   "dateFinished": "2021-05-11T10:20:29+0300",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n\n#### Очень неудобно, так что будем изобретать свой велосипед. Рассчитаем корреляцию признака с таргетом.\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-05-11T10:20:29+0300",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h4>Очень неудобно, так что будем изобретать свой велосипед. Рассчитаем корреляцию признака с таргетом.</h4>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1620717629197_1286590075",
+   "id": "paragraph_1620717629197_1286590075",
+   "dateCreated": "2021-05-11T10:20:29+0300",
+   "dateStarted": "2021-05-11T10:20:29+0300",
+   "dateFinished": "2021-05-11T10:20:29+0300",
+   "status": "FINISHED"
+  }
+ ],
+ "name": "Zeppelin Notebook",
+ "id": "",
+ "noteParams": {},
+ "noteForms": {},
+ "angularObjects": {},
+ "config": {
+  "isZeppelinNotebookCronEnable": false,
+  "looknfeel": "default",
+  "personalizedMode": "false"
+ },
+ "info": {}
+}

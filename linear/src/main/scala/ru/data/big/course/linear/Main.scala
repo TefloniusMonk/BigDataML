@@ -4,7 +4,10 @@ import breeze.linalg.DenseVector
 
 object Main {
   def main(args: Array[String]): Unit = {
-    val file = "/home/mikhail/IdeaProjects/BigDataML/src/main/resources/facebook_comments.csv"
+    if (args.length != 0) {
+      println("The path to the dataset file must be passed as an argument")
+    }
+    val file = args(0)
     val df = DataFrame.fromCsv(file)
     df.dropNa(inplace = true)
     val carriedSplit = df.randomSplit()
@@ -70,7 +73,7 @@ object Main {
     printMaxFeatures(xTest, estimator)
   }
 
-  private def printMaxFeatures(xTest: DataFrame, estimator: Estimator[Double]) = {
+  private def printMaxFeatures(xTest: DataFrame, estimator: Estimator[Double]): Unit = {
     print("Max 5 features: ")
     val featureMap = xTest.columnMap.map(t => (t._2, t._1))
     val sortedWeights = estimator.weights().data.zipWithIndex.sortWith((t1, t2) => t1._1 > t2._1).take(5)
@@ -82,6 +85,6 @@ object Main {
     val mae = Metric.mae(yPred = yPred, yTrue = yTest)
     val mse = Metric.mse(yPred = yPred, yTrue = yTest)
     val rmse = Metric.rmse(yPred = yPred, yTrue = yTest)
-    println(s"MAE: ${mae}\nMSE: ${mse}\nRMSE: ${rmse}")
+    println(s"MAE: $mae\nMSE: $mse\nRMSE: $rmse")
   }
 }
