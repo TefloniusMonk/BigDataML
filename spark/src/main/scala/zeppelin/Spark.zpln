@@ -311,7 +311,7 @@
    "status": "FINISHED"
   },
   {
-   "text": "%md \n#### Легче добавить каждой колонке UUID\n",
+   "text": "%md \n#### Легче добавить каждой колонке UUID",
    "user": "anonymous",
    "dateUpdated": "2021-05-11T21:41:19+0300",
    "progress": 0.0,
@@ -340,7 +340,7 @@
    "status": "FINISHED"
   },
   {
-   "text": "%spark\n\nval uuid = udf(() => java.util.UUID.randomUUID().toString)\ndf = df.withColumn(\"id\", uuid())",
+   "text": "%spark\nval uuid = udf(() => java.util.UUID.randomUUID().toString)\ndf = df.withColumn(\"id\", uuid())",
    "user": "anonymous",
    "dateUpdated": "2021-05-11T21:41:19+0300",
    "progress": 0.0,
@@ -492,7 +492,9 @@
    "progress": 23.0,
    "config": {
     "results": [
-     {}
+     {
+      "mode": "table"
+     }
     ]
    },
    "settings": {
@@ -500,27 +502,17 @@
      "bdtMeta": {
       "inlay": {
        "state": {
-        "currentPage": "Chart",
         "chart": {
          "series": [
           {
            "type": "Line"
           },
           {
-           "type": "Bar",
-           "categories": {
-            "column": "metadata_ownerId",
-            "index": 0.0
-           },
-           "bars": [
-            {
-             "column": "count",
-             "index": 1.0
-            }
-           ]
+           "type": "Bar"
           }
          ]
-        }
+        },
+        "currentPage": "Table"
        }
       }
      }
@@ -589,13 +581,15 @@
    "status": "FINISHED"
   },
   {
-   "text": "%spark\ndf.select($\"metadata_ownerId\", $\"id\", $\"liked\")\n        .where($\"liked\" === 1)\n        .groupBy($\"metadata_ownerId\")\n        .count()\n        .orderBy(desc(\"count\"))\n        .show(10)\n\n",
+   "text": "%spark\ndf.select($\"metadata_ownerId\", $\"id\", $\"liked\")\n        .where($\"liked\" === 1)\n        .groupBy($\"metadata_ownerId\")\n        .count()\n        .orderBy(desc(\"count\"))\n        .show(10)",
    "user": "anonymous",
    "dateUpdated": "2021-05-11T21:41:25+0300",
    "progress": 10.0,
    "config": {
     "results": [
-     {}
+     {
+      "mode": "table"
+     }
     ]
    },
    "settings": {
@@ -603,27 +597,17 @@
      "bdtMeta": {
       "inlay": {
        "state": {
-        "currentPage": "Chart",
         "chart": {
          "series": [
           {
            "type": "Line"
           },
           {
-           "type": "Bar",
-           "categories": {
-            "column": "metadata_ownerId",
-            "index": 0.0
-           },
-           "bars": [
-            {
-             "column": "count",
-             "index": 1.0
-            }
-           ]
+           "type": "Bar"
           }
          ]
-        }
+        },
+        "currentPage": "Table"
        }
       }
      }
@@ -756,7 +740,9 @@
    "progress": 10.0,
    "config": {
     "results": [
-     {}
+     {
+      "mode": "table"
+     }
     ]
    },
    "settings": {
@@ -764,30 +750,17 @@
      "bdtMeta": {
       "inlay": {
        "state": {
-        "currentPage": "Chart",
-        "table": {
-         "visibleRow": 9.0
-        },
         "chart": {
          "series": [
           {
            "type": "Line"
           },
           {
-           "type": "Bar",
-           "categories": {
-            "column": "hour",
-            "index": 0.0
-           },
-           "bars": [
-            {
-             "column": "count",
-             "index": 1.0
-            }
-           ]
+           "type": "Bar"
           }
          ]
-        }
+        },
+        "currentPage": "Table"
        }
       }
      }
@@ -827,7 +800,7 @@
    "status": "FINISHED"
   },
   {
-   "text": "%md\n#### Как и ожидалось: топ приходится на 18-21, а наименьшие значения с 0 до 5\n",
+   "text": "%md\n#### Как и ожидалось: топ приходится на 18-21, а наименьшие значения с 0 до 5 (График byHour.png)",
    "user": "anonymous",
    "dateUpdated": "2021-05-11T21:41:49+0300",
    "progress": 0.0,
@@ -856,7 +829,7 @@
    "status": "FINISHED"
   },
   {
-   "text": "%spark\n\ndf.printSchema()\n",
+   "text": "%spark\ndf.printSchema()",
    "user": "anonymous",
    "dateUpdated": "2021-05-11T21:41:49+0300",
    "progress": 0.0,
@@ -956,48 +929,6 @@
    "status": "FINISHED"
   },
   {
-   "text": "%spark\nnotNaDf.na.drop().count()",
-   "user": "anonymous",
-   "dateUpdated": "2021-05-11T21:41:51+0300",
-   "progress": 93.0,
-   "config": {},
-   "settings": {
-    "params": {},
-    "forms": {}
-   },
-   "results": {
-    "code": "SUCCESS",
-    "msg": [
-     {
-      "type": "TEXT",
-      "data": "\u001b[1m\u001b[34mres144\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 18286575\n"
-     }
-    ]
-   },
-   "apps": [],
-   "runtimeInfos": {
-    "jobUrl": {
-     "propertyName": "jobUrl",
-     "label": "SPARK JOB",
-     "tooltip": "View in Spark web UI",
-     "group": "spark",
-     "values": [
-      {
-       "jobUrl": "http://192.168.1.31:4040/jobs/job?id=567"
-      }
-     ],
-     "interpreterSettingId": "spark"
-    }
-   },
-   "progressUpdateIntervalMs": 500.0,
-   "jobName": "paragraph_1620758511906_422674763",
-   "id": "paragraph_1620758511906_422674763",
-   "dateCreated": "2021-05-11T21:41:51+0300",
-   "dateStarted": "2021-05-11T21:41:51+0300",
-   "dateFinished": "2021-05-11T21:44:33+0300",
-   "status": "FINISHED"
-  },
-  {
    "text": "%md\n#### Пустые значения заполнили, посчитаем корреляцию признаков ",
    "user": "anonymous",
    "dateUpdated": "2021-05-11T21:44:33+0300",
@@ -1080,7 +1011,7 @@
    "status": "FINISHED"
   },
   {
-   "text": "%spark\nimport org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.SparseVector\nimport org.apache.spark.mllib.stat.Statistics\nimport spark.implicits._\nimport org.apache.spark.mllib.linalg.{Vector, Vectors}\n\nval notStrCols = notNaDf.columns.filter(column => \"DoubleType\" == notNaDf.dtypes.toMap.apply(column))\nval corr = Statistics.corr(new VectorAssembler()\n        .setInputCols(notStrCols)\n        .setOutputCol(\"corr\")\n        .transform(notNaDf)\n        .select(\"corr\")\n        .rdd\n        .map(vec => Vectors.fromML(vec.getAs[SparseVector](\"corr\").toDense)))\n\n",
+   "text": "%spark\nimport org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.SparseVector\nimport org.apache.spark.mllib.stat.Statistics\nimport spark.implicits._\nimport org.apache.spark.mllib.linalg.{Vector, Vectors}\n\nval notStrCols = notNaDf.columns.filter(column => \"DoubleType\" == notNaDf.dtypes.toMap.apply(column))\nval corr = Statistics.corr(new VectorAssembler()\n        .setInputCols(notStrCols)\n        .setOutputCol(\"corr\")\n        .transform(notNaDf)\n        .select(\"corr\")\n        .rdd\n        .map(vec => Vectors.fromML(vec.getAs[SparseVector](\"corr\").toDense)))",
    "user": "anonymous",
    "dateUpdated": "2021-05-11T21:44:37+0300",
    "progress": 100.0,
@@ -1134,7 +1065,9 @@
    "progress": 0.0,
    "config": {
     "results": [
-     {}
+     {
+      "mode": "table"
+     }
     ]
    },
    "settings": {
@@ -1142,23 +1075,7 @@
      "bdtMeta": {
       "inlay": {
        "state": {
-        "currentPage": "Chart",
-        "chart": {
-         "series": [
-          {
-           "type": "Pie",
-           "values": {
-            "column": "corr",
-            "index": 0.0
-           },
-           "labels": {
-            "column": "colName",
-            "index": 1.0
-           },
-           "showPercents": true
-          }
-         ]
-        }
+        "currentPage": "Table"
        }
       }
      }
